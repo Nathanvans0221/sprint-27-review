@@ -90,7 +90,15 @@
     border-radius:9999px; font-size:11px; font-weight:600;
     background:var(--pc, var(--sf-stirling)); color:white;
     letter-spacing: 0.04em;
+    line-height: 1.4;
   }
+  .ag-cell .chip {
+    line-height: 1.4;
+    height: 20px;
+    padding: 0 8px;
+    font-size: 10.5px;
+  }
+  .ag-cell { display: flex; align-items: center; }
   details summary { cursor:pointer; list-style:none; }
   details summary::-webkit-details-marker { display:none; }
   details[open] summary .chev { transform: rotate(90deg); }
@@ -18518,6 +18526,7 @@ function header(){
       el('nav', {class:'mt-6 flex flex-wrap gap-2 text-sm'},
         navlink('#overview','Overview'),
         navlink('#products','By Product'),
+        navlink('#all','All PRs'),
         navlink('#active','In Red'),
         navlink('#metrics','Metrics'),
         navlink('#reviews','By Developer'),
@@ -18672,6 +18681,111 @@ function mountActiveGrid(container){
   }
 }
 
+function allPrsSection(){
+  // Flatten all PRs from authors (single source of truth)
+  const allPrs = [];
+  for (const a of DATA.authors) {
+    for (const prs of Object.values(a.products)) {
+      for (const pr of prs) allPrs.push(pr);
+    }
+  }
+
+  const gridContainer = el('div', {
+    id: 'all-prs-grid',
+    class: 'ag-theme-quartz',
+    style: 'height: 720px; width: 100%; --ag-font-family:Montserrat, Arial, sans-serif; --ag-font-size:13px; --ag-foreground-color:#3F4948; --ag-header-foreground-color:#3F4948; --ag-header-background-color:#F2F2F2; --ag-odd-row-background-color:#FAFAFA; --ag-row-hover-color:rgba(105,147,108,0.08); --ag-selected-row-background-color:rgba(161,219,166,0.20); --ag-border-color:#E5E7E5;'
+  });
+
+  setTimeout(() => mountAllPrsGrid(gridContainer, allPrs), 0);
+
+  return el('section', {id:'all', class:'max-w-7xl mx-auto px-6 py-10'},
+    el('div', {class:'sf-eyebrow mb-2'}, 'Every PR'),
+    el('h2', {class:'sf-h2 text-3xl mb-2'}, `All PRs — ${allPrs.length} total`),
+    el('p', {class:'mb-5 max-w-3xl', style:'color:#3F4948; font-weight:300;'},
+      `Every PR from S27 in one filterable grid. Sort by merge date, filter by author or product, scan for outliers. ${allPrs.filter(p => p.status === 'merged').length} merged + ${allPrs.filter(p => p.status === 'active').length} active.`),
+    el('div', {class:'sf-card overflow-hidden p-1'}, gridContainer)
+  );
+}
+
+function mountAllPrsGrid(container, rows){
+  const productCellRenderer = (params) => {
+    if (!params.value) return '';
+    const c = PRODUCT_COLORS[params.value] || '#6B7280';
+    return `<span class="chip" style="background:${c}">${params.value}</span>`;
+  };
+  const statusCellRenderer = (params) => {
+    if (params.value === 'active') {
+      return `<span class="chip" style="background:#3F4948; color:white;">IN RED</span>`;
+    }
+    return `<span style="color:#69936C; font-weight:500;">merged</span>`;
+  };
+  const typeCellRenderer = (params) => {
+    const styles = {
+      feat: 'background:#A1DBA6; color:#2E3635;',
+      fix:  'background:#F2F2F2; color:#3F4948;',
+      misc: 'background:#F2F2F2; color:#B3B3B3;',
+    };
+    const s = styles[params.value] || styles.misc;
+    return `<span style="${s} padding:1px 8px; border-radius:4px; font-family:monospace; font-size:11px; font-weight:600;">${params.value || ''}</span>`;
+  };
+  const linkCellRenderer = (params) => {
+    const pr = params.data;
+    return `<a href="${pr.url}" target="_blank" style="color:#69936C; font-family:monospace; font-size:12px; text-decoration:none;">#${pr.id} ↗</a>`;
+  };
+  const dateCellRenderer = (params) => {
+    return `<span style="color:#69936C; font-family:monospace; font-size:12px;">${params.value || ''}</span>`;
+  };
+  const repoCellRenderer = (params) => {
+    return `<span style="color:#69936C; font-family:monospace; font-size:12px;">${params.value}</span>`;
+  };
+  const scoreCellRenderer = (params) => {
+    const s = params.value || 0;
+    if (s >= 4) return `<span style="background:#A1DBA6; color:#2E3635; padding:1px 8px; border-radius:4px; font-family:monospace; font-weight:700; font-size:11px;">★ ${s}</span>`;
+    if (s >= 2) return `<span style="color:#557A58; font-family:monospace; font-weight:600; font-size:12px;">★ ${s}</span>`;
+    if (s <= -2) return `<span style="color:#B3B3B3; font-family:monospace; font-size:12px;">${s}</span>`;
+    return `<span style="color:#B3B3B3; font-family:monospace; font-size:12px;">${s}</span>`;
+  };
+
+  const columnDefs = [
+    { headerName: 'Status', field: 'status', width: 110, filter: 'agSetColumnFilter', floatingFilter: true,
+      cellRenderer: statusCellRenderer },
+    { headerName: 'Merged', field: 'merged_short', width: 110, sort: 'desc',
+      cellRenderer: dateCellRenderer, filter: 'agTextColumnFilter', floatingFilter: true },
+    { headerName: 'Author', field: 'author', width: 170, filter: 'agSetColumnFilter', floatingFilter: true,
+      cellStyle: {color:'#3F4948', fontWeight:'500'} },
+    { headerName: 'Product', field: 'product', width: 140, filter: 'agSetColumnFilter', floatingFilter: true,
+      cellRenderer: productCellRenderer },
+    { headerName: 'Type', field: 'type', width: 80, filter: 'agSetColumnFilter', floatingFilter: true,
+      cellRenderer: typeCellRenderer },
+    { headerName: 'Repo', field: 'repo', width: 170, filter: 'agSetColumnFilter', floatingFilter: true,
+      cellRenderer: repoCellRenderer },
+    { headerName: 'Title', field: 'title', flex: 1, minWidth: 320, filter: 'agTextColumnFilter', floatingFilter: true,
+      cellStyle: {color:'#3F4948'} },
+    { headerName: 'Score', field: 'review_score', width: 80, filter: 'agNumberColumnFilter', floatingFilter: true,
+      cellRenderer: scoreCellRenderer },
+    { headerName: 'Link', field: 'id', width: 90, cellRenderer: linkCellRenderer, sortable: false, filter: false },
+  ];
+
+  const gridOptions = {
+    columnDefs: columnDefs,
+    rowData: rows,
+    defaultColDef: { sortable: true, resizable: true },
+    rowHeight: 36,
+    headerHeight: 38,
+    domLayout: 'normal',
+    animateRows: true,
+    pagination: true,
+    paginationPageSize: 50,
+    paginationPageSizeSelector: [25, 50, 100, 200],
+  };
+
+  if (window.agGrid) {
+    window.agGrid.createGrid(container, gridOptions);
+  } else {
+    container.textContent = 'AG Grid failed to load.';
+  }
+}
+
 function metricsSection(){
   const authorBars = DATA.authors.slice().sort((a,b) => b.pr_count - a.pr_count);
   const max = Math.max(...authorBars.map(a => a.pr_count));
@@ -18722,10 +18836,10 @@ function reviewsSection(){
         el('div', {class:'sf-eyebrow mb-2'}, 'The Crew'),
         el('h2', {class:'sf-h2 text-3xl'}, 'By developer'),
         el('p', {class:'mt-2 max-w-3xl', style:'color:#3F4948; font-weight:300;'},
-          'Each card has two parts: ★ 5 PRs from teammates that this dev should review tomorrow, then their own PRs grouped by product area. Former Silver Fern devs appear at the end.'),
+          'Every dev\'s PRs from S27 grouped by product area. Pick what you want to review — no assignments. Former Silver Fern devs appear at the end.'),
       ),
       el('div', {class:'text-sm', style:'color:#69936C; font-weight:500;'},
-        `${DATA.authors.filter(a=>!a.former).length} active · ${DATA.authors.reduce((s,a) => s + (a.review_picks?.length||0), 0)} picks`)
+        `${DATA.authors.filter(a=>!a.former).length} active`)
     ),
     el('div', {class:'space-y-4'},
       ...DATA.authors.map(a => authorCard(a))
@@ -18733,36 +18847,8 @@ function reviewsSection(){
   );
 }
 
-function findPrById(id) {
-  for (const a of DATA.authors) {
-    for (const prs of Object.values(a.products)) {
-      for (const pr of prs) if (pr.id === id) return pr;
-    }
-  }
-  return null;
-}
-
-function reviewPickRow(pr){
-  const c = PRODUCT_COLORS[pr.product] || '#6B7280';
-  const dateLabel = pr.status === 'merged' ? (pr.merged_short || '') : (pr.created_short || '');
-  return el('div', {class:'pr-row sf-pick-row flex items-start gap-3 px-3 py-2 rounded'},
-    el('span', {class:'text-xs px-2 py-0.5 rounded font-mono shrink-0', style:'background:#A1DBA6; color:#3F4948; font-weight:700;'},
-      `★ ${pr.review_score}`),
-    el('span', {class:'chip text-xs shrink-0', style:`background:${c}`}, pr.product),
-    el('span', {class:'text-xs font-mono shrink-0 w-20', style:'color:#557A58;',
-                title: pr.status === 'merged' ? `Merged ${pr.merged_short}` : `Opened ${pr.created_short}`},
-      dateLabel),
-    el('span', {class:'text-xs shrink-0 w-32 truncate', style:'color:#3F4948; font-weight:500;'}, `by ${pr.author}`),
-    el('a', {href:pr.url, target:'_blank', class:'text-sm hover:underline flex-1', style:'color:#3F4948; font-weight:500;'},
-      pr.title),
-    el('span', {class:'text-xs font-mono shrink-0', style:'color:#69936C;'}, pr.repo),
-    el('span', {class:'text-xs font-mono shrink-0', style:'color:#B3B3B3;'}, `#${pr.id}`)
-  );
-}
-
 function authorCard(a){
   const productEntries = Object.entries(a.products).sort((x,y) => y[1].length - x[1].length);
-  const picks = (a.review_picks || []).map(findPrById).filter(Boolean);
   const cardStyle = a.former ? 'opacity:0.75;' : '';
   return el('div', {class:'sf-card', style:cardStyle},
     el('div', {class:'px-5 py-4 flex flex-wrap items-center gap-4 justify-between', style:'border-bottom:1px solid #F2F2F2;'},
@@ -18781,20 +18867,11 @@ function authorCard(a){
         )
       )
     ),
-    picks.length
-      ? el('div', {class:'px-5 pt-4 pb-3', style:'background:rgba(161,219,166,0.10); border-bottom:1px solid rgba(105,147,108,0.20);'},
-          el('div', {class:'flex items-center gap-2 mb-3'},
-            el('span', {class:'sf-eyebrow', style:'color:#557A58; font-size:11px;'},
-              `★ ${a.name.split(' ')[0]}'s review picks (${picks.length})`),
-            el('span', {class:'text-xs', style:'color:#3F4948; font-style:italic; font-family:"PT Serif", serif;'},
-              `— PRs to review tomorrow`)
-          ),
-          el('div', {class:'space-y-1.5'}, ...picks.map(reviewPickRow))
-        )
-      : (a.former ? el('div', {class:'px-5 py-3 text-xs italic', style:'background:#F2F2F2; color:#B3B3B3; font-family:"PT Serif", serif;'},
-          'No longer at Silver Fern — listed for context, no review assignments.') : null),
+    a.former
+      ? el('div', {class:'px-5 py-3 text-xs italic', style:'background:#F2F2F2; color:#B3B3B3; font-family:"PT Serif", serif;'},
+          'No longer at Silver Fern — listed for context.')
+      : null,
     el('div', {class:'p-5'},
-      el('div', {class:'sf-eyebrow mb-3'}, `${a.name.split(' ')[0]}'s own PRs this sprint`),
       ...productEntries.map(([prod, prs]) => productSection(prod, prs))
     )
   );
@@ -18861,6 +18938,7 @@ root.append(
   header(),
   overviewSection(),
   productsSection(),
+  allPrsSection(),
   activeSection(),
   metricsSection(),
   reviewsSection(),
