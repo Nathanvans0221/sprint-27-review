@@ -13,31 +13,35 @@
   },
   "products": {
     "DEV-TOOLS": {
-      "count": 53,
-      "merged": 53,
+      "count": 56,
+      "merged": 56,
       "active": 0,
       "contributors": [
         [
           "Chris Christensen",
-          24
+          27
         ],
         [
           "Kevin Short",
-          21
+          18
         ],
         [
           "Kennedy Kirk",
-          4
+          6
         ],
         [
           "Nathan van Wingerden",
-          4
+          5
         ]
       ],
       "streams": [
         [
           "PROJECTS",
           3
+        ],
+        [
+          "TASKS",
+          2
         ],
         [
           "SPRINTS",
@@ -48,15 +52,11 @@
           1
         ],
         [
+          "HELM",
+          1
+        ],
+        [
           "SCHEMAS",
-          1
-        ],
-        [
-          "AUTODEV",
-          1
-        ],
-        [
-          "AUTODEV-QUEUE",
           1
         ]
       ],
@@ -122,148 +122,128 @@
       ],
       "sample_titles": [
         "DEL3: Remove legacy dbrSession PWA surface",
-        "A5: cache full-session snapshot across DBR creation chunks",
         "Add A7 telemetry + per-row send isolation to DBR rows-calculated projection",
         "Add OpenTelemetry meters to DBR calculation orchestrator",
-        "Add WSAPI DBR Performance Grafana dashboard"
+        "Add WSAPI DBR Performance Grafana dashboard",
+        "feat(dbr): Move CalcSteps to side Mongo collection (A9a)"
+      ]
+    },
+    "AVAILABILITY": {
+      "count": 7,
+      "merged": 6,
+      "active": 1,
+      "contributors": [
+        [
+          "Chris Christensen",
+          2
+        ],
+        [
+          "Gustavo Cota",
+          2
+        ],
+        [
+          "Kevin Short",
+          2
+        ],
+        [
+          "Scott Slattery",
+          1
+        ]
+      ],
+      "streams": [
+        [
+          "AVAILABILITY",
+          2
+        ],
+        [
+          "AV",
+          1
+        ]
+      ],
+      "sample_titles": [
+        "A5: cache full-session snapshot across DBR creation chunks",
+        "A6: Orchestrator top-level catch + structured calc telemetry",
+        "feat(availability): rebuild on perpetual inventory backend with offline queue + retry UI",
+        "fix(availability): hide depleted rows + harden persist rehydrate",
+        "A4: Quantity Before/After audit panel on availability lot moves"
       ]
     },
     "FULFILL": {
-      "count": 97,
-      "merged": 93,
-      "active": 4,
+      "count": 49,
+      "merged": 48,
+      "active": 1,
       "contributors": [
         [
           "Kennedy Kirk",
-          44
+          18
+        ],
+        [
+          "Kevin Short",
+          11
         ],
         [
           "Chris Christensen",
-          20
+          7
+        ],
+        [
+          "Gustavo Cota",
+          5
+        ],
+        [
+          "Ethan Boss",
+          3
+        ]
+      ],
+      "streams": [
+        [
+          "FULFILL",
+          5
+        ],
+        [
+          "ALLOCATION",
+          3
+        ],
+        [
+          "ITEM",
+          3
+        ],
+        [
+          "TESTS",
+          2
+        ],
+        [
+          "PWA",
+          2
+        ],
+        [
+          "CUSTOMER",
+          2
+        ]
+      ],
+      "sample_titles": [
+        "feat(search): MongoDB Atlas full-text search for projects and tasks",
+        "Steer agents toward helm_batch_patch_tasks for partial task updates",
+        "A4 \u2014 Async allocation enrichment fan-out",
+        "Fix HasChanges identity guard for ReplaceCustomerSalesPeople and TempCodeEntry document-naming violation",
+        "fix(tests): remove sync-over-async deadlock in Allocation unit tests"
+      ]
+    },
+    "PLATFORM": {
+      "count": 181,
+      "merged": 178,
+      "active": 3,
+      "contributors": [
+        [
+          "Chris Christensen",
+          127
         ],
         [
           "Kevin Short",
           17
         ],
         [
-          "Ethan Boss",
-          3
-        ],
-        [
-          "Gustavo Cota",
-          3
-        ]
-      ],
-      "streams": [
-        [
-          "ORDERS",
-          10
-        ],
-        [
-          "ORDER",
-          6
-        ],
-        [
-          "CUSTOMER",
-          5
-        ],
-        [
-          "TERMS",
-          5
-        ],
-        [
-          "FULFILL",
-          5
-        ],
-        [
-          "TASKS",
-          4
-        ]
-      ],
-      "sample_titles": [
-        "Create feature branch before planning in helm-next-task",
-        "feat(helm): sort task and project list queries by status",
-        "feat(search): MongoDB Atlas full-text search for projects and tasks",
-        "feat(tasks): add distinctTaskRepos query for PWA repo filter",
-        "Steer agents toward helm_batch_patch_tasks for partial task updates"
-      ]
-    },
-    "OTHER": {
-      "count": 38,
-      "merged": 36,
-      "active": 2,
-      "contributors": [
-        [
-          "Chris Christensen",
-          13
-        ],
-        [
-          "Kevin Short",
-          13
-        ],
-        [
           "Kennedy Kirk",
-          6
-        ],
-        [
-          "Scott Slattery",
-          2
-        ],
-        [
-          "Timothy Short",
-          2
-        ]
-      ],
-      "streams": [
-        [
-          "TESTS",
-          4
-        ],
-        [
-          "FEATURE-FLAG",
-          2
-        ],
-        [
-          "ITEMS",
-          2
-        ],
-        [
-          "WORKER-CONFIG",
-          1
-        ],
-        [
-          "RELEASE",
-          1
-        ],
-        [
-          "HOME",
-          1
-        ]
-      ],
-      "sample_titles": [
-        "A6: Orchestrator top-level catch + structured calc telemetry",
-        "A9b \u2014 Streamline internal append: build all events, one save",
-        "Expose :9090 metrics port on prod wsapi pods",
-        "Expose :9090 metrics port on stage wsapi pods",
-        "Skip CommandBar integration tests (deprecated feature)"
-      ]
-    },
-    "PLATFORM": {
-      "count": 166,
-      "merged": 163,
-      "active": 3,
-      "contributors": [
-        [
-          "Chris Christensen",
-          118
-        ],
-        [
-          "Kevin Short",
-          14
-        ],
-        [
-          "Kennedy Kirk",
-          9
+          12
         ],
         [
           "Ethan Boss",
@@ -284,6 +264,10 @@
           5
         ],
         [
+          "SERVICES",
+          4
+        ],
+        [
           "BG-SERVICE-CONFIG",
           4
         ],
@@ -294,32 +278,88 @@
         [
           "AUTH",
           3
-        ],
-        [
-          "GROWPOINT",
-          3
         ]
       ],
       "sample_titles": [
-        "Add read-only ServiceAccount for relman ACR cleanup scanner",
-        "Add wsapi Prometheus scrape job + expose :9090 on stage wsapi pods",
-        "Prune dead manifests, archived YAMLs, and migration artifacts",
-        "Tune finish processReadyRecords cronjob for higher throughput",
-        "feat(ado-agents): VMSS-backed Azure DevOps agent pool"
+        "feat(tasks): add distinctTaskRepos query for PWA repo filter",
+        "feat: ADD-task approval flow (PWA portion)",
+        "feat(bg-service-name): add FlakyTaskCreator enum value",
+        "feat(services): FlakyTaskCreator weekly worker (Flake monitoring S3)",
+        "fix(services): match PascalCase field names in FlakyTaskCreator aggregation"
       ]
     },
-    "PRODUCE": {
-      "count": 143,
-      "merged": 124,
-      "active": 19,
+    "OTHER": {
+      "count": 71,
+      "merged": 67,
+      "active": 4,
       "contributors": [
         [
+          "Kennedy Kirk",
+          28
+        ],
+        [
           "Kevin Short",
-          85
+          19
         ],
         [
           "Chris Christensen",
-          27
+          17
+        ],
+        [
+          "Scott Slattery",
+          2
+        ],
+        [
+          "Timothy Short",
+          2
+        ]
+      ],
+      "streams": [
+        [
+          "ORDERS",
+          10
+        ],
+        [
+          "ORDER",
+          6
+        ],
+        [
+          "TERMS",
+          5
+        ],
+        [
+          "TESTS",
+          4
+        ],
+        [
+          "CUSTOMER",
+          3
+        ],
+        [
+          "FEATURE-FLAG",
+          2
+        ]
+      ],
+      "sample_titles": [
+        "fix(customer): preserve Settings and SalesPeople across LocationUpdated",
+        "fix(customer): preserve location permissions on legacy LocationUpdated events",
+        "fix(customer): stop superfluous CustomerLocationSettingsUpdated events on merge",
+        "fix(orders): make AddLineItemData.RoyaltyExempt non-nullable with schema default",
+        "fix(terms): correct self-exclusion in IsTermsNameAlreadyUsed"
+      ]
+    },
+    "PRODUCE": {
+      "count": 122,
+      "merged": 104,
+      "active": 18,
+      "contributors": [
+        [
+          "Kevin Short",
+          75
+        ],
+        [
+          "Chris Christensen",
+          23
         ],
         [
           "Ethan Boss",
@@ -327,7 +367,7 @@
         ],
         [
           "Kennedy Kirk",
-          7
+          5
         ],
         [
           "Nathan van Wingerden",
@@ -344,84 +384,28 @@
           6
         ],
         [
-          "ORG",
-          6
-        ],
-        [
           "PSI",
           6
         ],
         [
-          "MPR",
-          4
+          "ORG",
+          5
         ],
         [
           "PR",
           3
+        ],
+        [
+          "BPF",
+          2
         ]
       ],
       "sample_titles": [
-        "Add wsapi PodDisruptionBudget for production",
-        "Stagger inventory importers to reduce SF SQL contention",
         "fix: patch HotChocolate/Snappier CVEs and gate deploy on production env",
         "Merge release into production 2026-05-11-1",
-        "Merge release into production 2026-05-11-1"
-      ]
-    },
-    "REPORTS": {
-      "count": 27,
-      "merged": 26,
-      "active": 1,
-      "contributors": [
-        [
-          "Kevin Short",
-          14
-        ],
-        [
-          "Scott Slattery",
-          7
-        ],
-        [
-          "Kennedy Kirk",
-          4
-        ],
-        [
-          "Chris Christensen",
-          1
-        ],
-        [
-          "Nathan van Wingerden",
-          1
-        ]
-      ],
-      "streams": [
-        [
-          "REPORTS",
-          5
-        ],
-        [
-          "REPORT-SCHEDULE",
-          4
-        ],
-        [
-          "ORDERS",
-          1
-        ],
-        [
-          "PERCENT",
-          1
-        ],
-        [
-          "REPORT-BUILDER",
-          1
-        ]
-      ],
-      "sample_titles": [
-        "fix(k8s): align test ReportScheduleExecution Mongo db names",
-        "feat(orders): gate Bonnie invoice/acknowledgement PDFs to BPF; add tenant report bindings",
-        "feat(reports): royaltyPayoutReport GraphQL query (Phase 3 backend)",
-        "fix(percent): report bound in percent units in CreateFromPercentage error",
-        "fix(reports): compute Order DueDate from Terms snapshot"
+        "Merge release into production 2026-05-11-1",
+        "Merge release into production 2026-05-12-1",
+        "fix(bpf): FgAvailabilitySnapshot BPF spec + material-lot conn fix"
       ]
     },
     "RESTOCK": {
@@ -479,6 +463,140 @@
         "feat(restock/orders-v2): rewire to Restock GraphQL surface (R12)",
         "fix(restock): drop dead calcSteps selection from DbrSessionOrderItemDoc"
       ]
+    },
+    "INVENTORY": {
+      "count": 3,
+      "merged": 2,
+      "active": 1,
+      "contributors": [
+        [
+          "Gustavo Cota",
+          1
+        ],
+        [
+          "John Beauford",
+          1
+        ],
+        [
+          "Kennedy Kirk",
+          1
+        ]
+      ],
+      "streams": [
+        [
+          "RETAIL",
+          1
+        ],
+        [
+          "HOME",
+          1
+        ]
+      ],
+      "sample_titles": [
+        "feat(retail): track Quick Scan UOM per-mode (Credit defaults to Units)",
+        "feat(home): add Retail Intelligence app launcher tile",
+        "fix: send taxAuthorityIds on order customer location"
+      ]
+    },
+    "MOBILE": {
+      "count": 8,
+      "merged": 8,
+      "active": 0,
+      "contributors": [
+        [
+          "Kevin Short",
+          6
+        ],
+        [
+          "Jared Leverington",
+          1
+        ],
+        [
+          "Scott Slattery",
+          1
+        ]
+      ],
+      "streams": [
+        [
+          "MPR",
+          4
+        ],
+        [
+          "VERIFY",
+          1
+        ],
+        [
+          "ENGAGE",
+          1
+        ],
+        [
+          "ORG",
+          1
+        ],
+        [
+          "MOBILE",
+          1
+        ]
+      ],
+      "sample_titles": [
+        "feat(verify): mobile Verify module \u2014 orders list, detail, scan, submit (VER-03..09)",
+        "feat(engage): show last-count user + timestamp on Engage mobile location bar (A3)",
+        "MPR-04: Variance reason picker on mobile material receive",
+        "MPR-05: Receive audit drilldown view",
+        "ORG-09 + ORG-10 + MPR-02: Mobile PO receive UX \u2014 OrganicLotCode + Vendor Lot # per line"
+      ]
+    },
+    "REPORTS": {
+      "count": 27,
+      "merged": 26,
+      "active": 1,
+      "contributors": [
+        [
+          "Kevin Short",
+          16
+        ],
+        [
+          "Scott Slattery",
+          6
+        ],
+        [
+          "Kennedy Kirk",
+          4
+        ],
+        [
+          "Nathan van Wingerden",
+          1
+        ]
+      ],
+      "streams": [
+        [
+          "REPORTS",
+          5
+        ],
+        [
+          "REPORT-SCHEDULE",
+          4
+        ],
+        [
+          "ORDERS",
+          1
+        ],
+        [
+          "PERCENT",
+          1
+        ],
+        [
+          "REPORT-BUILDER",
+          1
+        ]
+      ],
+      "sample_titles": [
+        "feat(orders): gate Bonnie invoice/acknowledgement PDFs to BPF; add tenant report bindings",
+        "feat(reports): royaltyPayoutReport GraphQL query (Phase 3 backend)",
+        "fix(percent): report bound in percent units in CreateFromPercentage error",
+        "fix(reports): compute Order DueDate from Terms snapshot",
+        "Add reportInventoryTransactionsData data source (new)"
+      ]
     }
   },
   "authors": [
@@ -486,8 +604,51 @@
       "name": "Chris Christensen",
       "email": "chris@silverfern.com",
       "pr_count": 271,
-      "suggested_reviewer": "Eric Whitlow",
       "products": {
+        "AVAILABILITY": [
+          {
+            "id": 7199,
+            "title": "A5: cache full-session snapshot across DBR creation chunks",
+            "repo": "wsapi",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-09T05:37:06.331988+00:00",
+            "closed": "2026-05-09T05:39:18.334260+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/dbr-creation-snapshot-cache",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7199",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "AVAILABILITY"
+          },
+          {
+            "id": 7197,
+            "title": "A6: Orchestrator top-level catch + structured calc telemetry",
+            "repo": "wsapi",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-09T04:13:55.061390+00:00",
+            "closed": "2026-05-09T04:42:43.371234+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/dbr-orchestrator-catch-telemetry",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7197",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "AVAILABILITY"
+          }
+        ],
         "DEV-TOOLS": [
           {
             "id": 7204,
@@ -508,6 +669,27 @@
             "is_release": false,
             "work_stream": "MISC",
             "type": "misc",
+            "product": "DEV-TOOLS"
+          },
+          {
+            "id": 7459,
+            "title": "Create feature branch before planning in helm-next-task",
+            "repo": "claude-code",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-14T11:27:25.247464+00:00",
+            "closed": "2026-05-14T11:27:30.232938+00:00",
+            "merge_status": "succeeded",
+            "source": "helm-next-task/branch-before-plan",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/claude-code/pullrequest/7459",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
             "product": "DEV-TOOLS"
           },
           {
@@ -549,6 +731,27 @@
             ],
             "is_release": false,
             "work_stream": "MISC",
+            "type": "feat",
+            "product": "DEV-TOOLS"
+          },
+          {
+            "id": 6982,
+            "title": "feat(helm): sort task and project list queries by status",
+            "repo": "sf-ai-helm-api",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-05T14:21:05.782921+00:00",
+            "closed": "2026-05-05T14:21:13.057350+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/helm-list-sort-order",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-api/pullrequest/6982",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "HELM",
             "type": "feat",
             "product": "DEV-TOOLS"
           },
@@ -739,6 +942,27 @@
             "is_release": false,
             "work_stream": "MISC",
             "type": "fix",
+            "product": "DEV-TOOLS"
+          },
+          {
+            "id": 7641,
+            "title": "feat(tasks): add repo filter to every task list surface",
+            "repo": "sf-ai-helm-pwa",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-16T20:25:02.041316+00:00",
+            "closed": "2026-05-16T20:25:07.608915+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/repo-filter",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-pwa/pullrequest/7641",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "TASKS",
+            "type": "feat",
             "product": "DEV-TOOLS"
           },
           {
@@ -1017,18 +1241,18 @@
             "product": "FORECAST/DBR"
           },
           {
-            "id": 7199,
-            "title": "A5: cache full-session snapshot across DBR creation chunks",
+            "id": 7184,
+            "title": "A3 \u2014 DBR latest inventory state via aggregation",
             "repo": "wsapi",
             "author": "Chris Christensen",
             "author_email": "chris@silverfern.com",
-            "created": "2026-05-09T05:37:06.331988+00:00",
-            "closed": "2026-05-09T05:39:18.334260+00:00",
+            "created": "2026-05-08T19:52:37.303143+00:00",
+            "closed": "2026-05-08T22:02:46.554693+00:00",
             "merge_status": "succeeded",
-            "source": "feature/dbr-creation-snapshot-cache",
+            "source": "task/dbr-latest-inventory-aggregation-A3",
             "target": "master",
             "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7199",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7184",
             "reviewers": [
               "Chris Christensen"
             ],
@@ -1271,48 +1495,6 @@
         ],
         "FULFILL": [
           {
-            "id": 7459,
-            "title": "Create feature branch before planning in helm-next-task",
-            "repo": "claude-code",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-14T11:27:25.247464+00:00",
-            "closed": "2026-05-14T11:27:30.232938+00:00",
-            "merge_status": "succeeded",
-            "source": "helm-next-task/branch-before-plan",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/claude-code/pullrequest/7459",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6982,
-            "title": "feat(helm): sort task and project list queries by status",
-            "repo": "sf-ai-helm-api",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-05T14:21:05.782921+00:00",
-            "closed": "2026-05-05T14:21:13.057350+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/helm-list-sort-order",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-api/pullrequest/6982",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "HELM",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
             "id": 6830,
             "title": "feat(search): MongoDB Atlas full-text search for projects and tasks",
             "repo": "sf-ai-helm-api",
@@ -1330,27 +1512,6 @@
             ],
             "is_release": false,
             "work_stream": "SEARCH",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7639,
-            "title": "feat(tasks): add distinctTaskRepos query for PWA repo filter",
-            "repo": "sf-ai-helm-api",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-16T20:14:29.904009+00:00",
-            "closed": "2026-05-16T20:14:36.908353+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/distinct-task-repos",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-api/pullrequest/7639",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "TASKS",
             "type": "feat",
             "product": "FULFILL"
           },
@@ -1373,48 +1534,6 @@
             "is_release": false,
             "work_stream": "MISC",
             "type": "misc",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7641,
-            "title": "feat(tasks): add repo filter to every task list surface",
-            "repo": "sf-ai-helm-pwa",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-16T20:25:02.041316+00:00",
-            "closed": "2026-05-16T20:25:07.608915+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/repo-filter",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-pwa/pullrequest/7641",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "TASKS",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6688,
-            "title": "feat: ADD-task approval flow (PWA portion)",
-            "repo": "sf-ai-helm-pwa",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-04-29T02:02:15.776704+00:00",
-            "closed": "2026-04-29T02:02:25.291976+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/approvals-add-flow",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-pwa/pullrequest/6688",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
             "product": "FULFILL"
           },
           {
@@ -1456,132 +1575,6 @@
             ],
             "is_release": false,
             "work_stream": "MISC",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7067,
-            "title": "feat(bg-service-name): add FlakyTaskCreator enum value",
-            "repo": "wsapi",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-06T20:02:35.410935+00:00",
-            "closed": "2026-05-06T20:02:44.253206+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/flaky-task-creator-bg-service-name",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7067",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "BG-SERVICE-NAME",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6801,
-            "title": "fix(customer): preserve Settings and SalesPeople across LocationUpdated",
-            "repo": "wsapi",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-04-30T22:10:25.978458+00:00",
-            "closed": "2026-04-30T22:10:35.231497+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/customer-location-updated-preserves-settings",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6801",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "CUSTOMER",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6804,
-            "title": "fix(customer): preserve location permissions on legacy LocationUpdated events",
-            "repo": "wsapi",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-04-30T22:36:15.059529+00:00",
-            "closed": "2026-04-30T22:36:23.782618+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/customer-location-updated-preserves-permissions",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6804",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "CUSTOMER",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6710,
-            "title": "fix(customer): stop superfluous CustomerLocationSettingsUpdated events on merge",
-            "repo": "wsapi",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-04-29T14:53:39.785115+00:00",
-            "closed": "2026-04-29T17:37:41.496064+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/customer-location-settings-superfluous-events",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6710",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "CUSTOMER",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6961,
-            "title": "fix(orders): make AddLineItemData.RoyaltyExempt non-nullable with schema default",
-            "repo": "wsapi",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-04T20:16:32.075677+00:00",
-            "closed": "2026-05-04T20:16:42.191516+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/royalty-exempt-non-nullable-input",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6961",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "ORDERS",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7210,
-            "title": "fix(terms): correct self-exclusion in IsTermsNameAlreadyUsed",
-            "repo": "wsapi",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-09T18:50:13.160326+00:00",
-            "closed": "2026-05-09T18:50:18.216997+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/terms-name-uniqueness-self-exclusion",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7210",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "TERMS",
             "type": "fix",
             "product": "FULFILL"
           },
@@ -1628,91 +1621,28 @@
             "product": "FULFILL"
           },
           {
-            "id": 7066,
-            "title": "feat(services): FlakyTaskCreator weekly worker (Flake monitoring S3)",
+            "id": 7078,
+            "title": "fix(k8s): align test ReportScheduleExecution Mongo db names",
             "repo": "wsapi-services",
             "author": "Chris Christensen",
             "author_email": "chris@silverfern.com",
-            "created": "2026-05-06T19:58:49.315684+00:00",
-            "closed": "2026-05-06T19:59:02.253678+00:00",
+            "created": "2026-05-06T22:17:35.830395+00:00",
+            "closed": "2026-05-07T01:24:13.079149+00:00",
             "merge_status": "succeeded",
-            "source": "feature/wsapi-services-flaky-task-creator-worker",
+            "source": "fix/wsapi-services-report-schedule-execution-test-mongo-db-names",
             "target": "main",
             "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7066",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "SERVICES",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7072,
-            "title": "fix(services): match PascalCase field names in FlakyTaskCreator aggregation",
-            "repo": "wsapi-services",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-06T20:43:00.230318+00:00",
-            "closed": "2026-05-06T20:43:09.495823+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/wsapi-services-flaky-task-creator-pascalcase-fields",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7072",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "SERVICES",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7074,
-            "title": "fix(services): traverse DetectedAt sub-doc in FlakyTaskCreator aggregation",
-            "repo": "wsapi-services",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-06T20:59:30.742628+00:00",
-            "closed": "2026-05-06T20:59:41.691700+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/wsapi-services-flaky-task-creator-detectedat-subdoc-traversal",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7074",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "SERVICES",
-            "type": "fix",
-            "product": "FULFILL"
-          }
-        ],
-        "OTHER": [
-          {
-            "id": 7197,
-            "title": "A6: Orchestrator top-level catch + structured calc telemetry",
-            "repo": "wsapi",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-09T04:13:55.061390+00:00",
-            "closed": "2026-05-09T04:42:43.371234+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/dbr-orchestrator-catch-telemetry",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7197",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7078",
             "reviewers": [
               "Chris Christensen"
             ],
             "is_release": false,
             "work_stream": "MISC",
-            "type": "misc",
-            "product": "OTHER"
-          },
+            "type": "fix",
+            "product": "FULFILL"
+          }
+        ],
+        "OTHER": [
           {
             "id": 7208,
             "title": "A9b \u2014 Streamline internal append: build all events, one save",
@@ -1840,6 +1770,90 @@
             "product": "OTHER"
           },
           {
+            "id": 6801,
+            "title": "fix(customer): preserve Settings and SalesPeople across LocationUpdated",
+            "repo": "wsapi",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-04-30T22:10:25.978458+00:00",
+            "closed": "2026-04-30T22:10:35.231497+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/customer-location-updated-preserves-settings",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6801",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "CUSTOMER",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
+            "id": 6804,
+            "title": "fix(customer): preserve location permissions on legacy LocationUpdated events",
+            "repo": "wsapi",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-04-30T22:36:15.059529+00:00",
+            "closed": "2026-04-30T22:36:23.782618+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/customer-location-updated-preserves-permissions",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6804",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "CUSTOMER",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
+            "id": 6710,
+            "title": "fix(customer): stop superfluous CustomerLocationSettingsUpdated events on merge",
+            "repo": "wsapi",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-04-29T14:53:39.785115+00:00",
+            "closed": "2026-04-29T17:37:41.496064+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/customer-location-settings-superfluous-events",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6710",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "CUSTOMER",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
+            "id": 6961,
+            "title": "fix(orders): make AddLineItemData.RoyaltyExempt non-nullable with schema default",
+            "repo": "wsapi",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-04T20:16:32.075677+00:00",
+            "closed": "2026-05-04T20:16:42.191516+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/royalty-exempt-non-nullable-input",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6961",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "ORDERS",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
             "id": 6714,
             "title": "fix(release): drop FloatingTimeEntry IdempotencyKey leftovers from 04-27 merge",
             "repo": "wsapi",
@@ -1855,6 +1869,27 @@
             "reviewers": [],
             "is_release": false,
             "work_stream": "RELEASE",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
+            "id": 7210,
+            "title": "fix(terms): correct self-exclusion in IsTermsNameAlreadyUsed",
+            "repo": "wsapi",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-09T18:50:13.160326+00:00",
+            "closed": "2026-05-09T18:50:18.216997+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/terms-name-uniqueness-self-exclusion",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7210",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "TERMS",
             "type": "fix",
             "product": "OTHER"
           },
@@ -1987,6 +2022,27 @@
             "product": "PLATFORM"
           },
           {
+            "id": 7108,
+            "title": "Add wsapi PodDisruptionBudget for production",
+            "repo": "k8s-worksuite",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-07T15:20:36.190752+00:00",
+            "closed": "2026-05-07T15:20:41.461549+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/wsapi-prod-pdb",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/k8s-worksuite/pullrequest/7108",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "PLATFORM"
+          },
+          {
             "id": 7219,
             "title": "Add wsapi Prometheus scrape job + expose :9090 on stage wsapi pods",
             "repo": "k8s-worksuite",
@@ -2020,6 +2076,27 @@
             "target": "main",
             "status": "merged",
             "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/k8s-worksuite/pullrequest/7233",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "PLATFORM"
+          },
+          {
+            "id": 7326,
+            "title": "Stagger inventory importers to reduce SF SQL contention",
+            "repo": "k8s-worksuite",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-12T04:32:09.990449+00:00",
+            "closed": "2026-05-12T04:32:35.792737+00:00",
+            "merge_status": "succeeded",
+            "source": "chore/stagger-inventory-importers",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/k8s-worksuite/pullrequest/7326",
             "reviewers": [
               "Chris Christensen"
             ],
@@ -2134,6 +2211,27 @@
             "product": "PLATFORM"
           },
           {
+            "id": 7639,
+            "title": "feat(tasks): add distinctTaskRepos query for PWA repo filter",
+            "repo": "sf-ai-helm-api",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-16T20:14:29.904009+00:00",
+            "closed": "2026-05-16T20:14:36.908353+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/distinct-task-repos",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-api/pullrequest/7639",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "TASKS",
+            "type": "feat",
+            "product": "PLATFORM"
+          },
+          {
             "id": 6696,
             "title": "feat: live approval notifications via GraphQL subscriptions",
             "repo": "sf-ai-helm-api",
@@ -2236,6 +2334,27 @@
             "is_release": false,
             "work_stream": "MISC",
             "type": "misc",
+            "product": "PLATFORM"
+          },
+          {
+            "id": 6688,
+            "title": "feat: ADD-task approval flow (PWA portion)",
+            "repo": "sf-ai-helm-pwa",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-04-29T02:02:15.776704+00:00",
+            "closed": "2026-04-29T02:02:25.291976+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/approvals-add-flow",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-pwa/pullrequest/6688",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
             "product": "PLATFORM"
           },
           {
@@ -2613,6 +2732,27 @@
             ],
             "is_release": false,
             "work_stream": "BG",
+            "type": "feat",
+            "product": "PLATFORM"
+          },
+          {
+            "id": 7067,
+            "title": "feat(bg-service-name): add FlakyTaskCreator enum value",
+            "repo": "wsapi",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-06T20:02:35.410935+00:00",
+            "closed": "2026-05-06T20:02:44.253206+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/flaky-task-creator-bg-service-name",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7067",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "BG-SERVICE-NAME",
             "type": "feat",
             "product": "PLATFORM"
           },
@@ -4066,6 +4206,48 @@
             "product": "PLATFORM"
           },
           {
+            "id": 7550,
+            "title": "feat(rfid): production-ready RfidScanSync worker + k8s manifests",
+            "repo": "wsapi-services",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-15T15:48:18.809596+00:00",
+            "closed": "2026-05-15T15:48:26.394267+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/rfid-scan-pod-production-readiness",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7550",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "RFID",
+            "type": "feat",
+            "product": "PLATFORM"
+          },
+          {
+            "id": 7066,
+            "title": "feat(services): FlakyTaskCreator weekly worker (Flake monitoring S3)",
+            "repo": "wsapi-services",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-06T19:58:49.315684+00:00",
+            "closed": "2026-05-06T19:59:02.253678+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/wsapi-services-flaky-task-creator-worker",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7066",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "SERVICES",
+            "type": "feat",
+            "product": "PLATFORM"
+          },
+          {
             "id": 7622,
             "title": "feat(workers): migrate ItemProgramManagement to ItemProgramCleanWorker",
             "repo": "wsapi-services",
@@ -4276,6 +4458,48 @@
             "product": "PLATFORM"
           },
           {
+            "id": 7072,
+            "title": "fix(services): match PascalCase field names in FlakyTaskCreator aggregation",
+            "repo": "wsapi-services",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-06T20:43:00.230318+00:00",
+            "closed": "2026-05-06T20:43:09.495823+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/wsapi-services-flaky-task-creator-pascalcase-fields",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7072",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "SERVICES",
+            "type": "fix",
+            "product": "PLATFORM"
+          },
+          {
+            "id": 7074,
+            "title": "fix(services): traverse DetectedAt sub-doc in FlakyTaskCreator aggregation",
+            "repo": "wsapi-services",
+            "author": "Chris Christensen",
+            "author_email": "chris@silverfern.com",
+            "created": "2026-05-06T20:59:30.742628+00:00",
+            "closed": "2026-05-06T20:59:41.691700+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/wsapi-services-flaky-task-creator-detectedat-subdoc-traversal",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7074",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "SERVICES",
+            "type": "fix",
+            "product": "PLATFORM"
+          },
+          {
             "id": 6836,
             "title": "fix(stage,prod): use wsapi-headless URL for round-robin",
             "repo": "wsapi-services",
@@ -4446,48 +4670,6 @@
         ],
         "PRODUCE": [
           {
-            "id": 7108,
-            "title": "Add wsapi PodDisruptionBudget for production",
-            "repo": "k8s-worksuite",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-07T15:20:36.190752+00:00",
-            "closed": "2026-05-07T15:20:41.461549+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/wsapi-prod-pdb",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/k8s-worksuite/pullrequest/7108",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
-            "id": 7326,
-            "title": "Stagger inventory importers to reduce SF SQL contention",
-            "repo": "k8s-worksuite",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-12T04:32:09.990449+00:00",
-            "closed": "2026-05-12T04:32:35.792737+00:00",
-            "merge_status": "succeeded",
-            "source": "chore/stagger-inventory-importers",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/k8s-worksuite/pullrequest/7326",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "misc",
-            "product": "PRODUCE"
-          },
-          {
             "id": 7158,
             "title": "fix: patch HotChocolate/Snappier CVEs and gate deploy on production env",
             "repo": "sf-release-manifest-api",
@@ -4633,27 +4815,6 @@
             "is_release": false,
             "work_stream": "FGAVAILABILITY",
             "type": "fix",
-            "product": "PRODUCE"
-          },
-          {
-            "id": 7184,
-            "title": "A3 \u2014 DBR latest inventory state via aggregation",
-            "repo": "wsapi",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-08T19:52:37.303143+00:00",
-            "closed": "2026-05-08T22:02:46.554693+00:00",
-            "merge_status": "succeeded",
-            "source": "task/dbr-latest-inventory-aggregation-A3",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7184",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "misc",
             "product": "PRODUCE"
           },
           {
@@ -4888,27 +5049,6 @@
             "product": "PRODUCE"
           },
           {
-            "id": 7550,
-            "title": "feat(rfid): production-ready RfidScanSync worker + k8s manifests",
-            "repo": "wsapi-services",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-15T15:48:18.809596+00:00",
-            "closed": "2026-05-15T15:48:26.394267+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/rfid-scan-pod-production-readiness",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7550",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "RFID",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
             "id": 7359,
             "title": "fix(bpf): add Location join to ErpAvailabilitySync per BPF spec",
             "repo": "wsapi-services",
@@ -5012,29 +5152,6 @@
             "work_stream": "MISC",
             "type": "fix",
             "product": "PRODUCE"
-          }
-        ],
-        "REPORTS": [
-          {
-            "id": 7078,
-            "title": "fix(k8s): align test ReportScheduleExecution Mongo db names",
-            "repo": "wsapi-services",
-            "author": "Chris Christensen",
-            "author_email": "chris@silverfern.com",
-            "created": "2026-05-06T22:17:35.830395+00:00",
-            "closed": "2026-05-07T01:24:13.079149+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/wsapi-services-report-schedule-execution-test-mongo-db-names",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7078",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "fix",
-            "product": "REPORTS"
           }
         ],
         "RESTOCK": [
@@ -6200,7 +6317,6 @@
       "name": "Eric Whitlow",
       "email": "eric@silverfern.com",
       "pr_count": 6,
-      "suggested_reviewer": "Ethan Boss",
       "products": {
         "FORECAST/DBR": [
           {
@@ -6342,7 +6458,6 @@
       "name": "Ethan Boss",
       "email": "ethan.boss@silverfern.com",
       "pr_count": 33,
-      "suggested_reviewer": "Gabriela Gonzales",
       "products": {
         "FORECAST/DBR": [
           {
@@ -7060,7 +7175,6 @@
       "name": "Gabriela Gonzales",
       "email": "gabriela.gonzales@silverfern.com",
       "pr_count": 11,
-      "suggested_reviewer": "Gustavo Cota",
       "products": {
         "FORECAST/DBR": [
           {
@@ -7318,9 +7432,78 @@
       "name": "Gustavo Cota",
       "email": "gustavo.cota@silverfern.com",
       "pr_count": 10,
-      "suggested_reviewer": "Isaac Short",
       "products": {
+        "AVAILABILITY": [
+          {
+            "id": 6408,
+            "title": "feat(availability): rebuild on perpetual inventory backend with offline queue + retry UI",
+            "repo": "worksuite-pwa",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-04-23T20:45:27.262790+00:00",
+            "closed": "2026-05-04T13:44:31.169331+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/availability-perpetual-inventory",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6408",
+            "reviewers": [
+              "Scott Slattery",
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "AVAILABILITY",
+            "type": "feat",
+            "product": "AVAILABILITY"
+          },
+          {
+            "id": 6940,
+            "title": "fix(availability): hide depleted rows + harden persist rehydrate",
+            "repo": "worksuite-pwa",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-05-04T14:33:47.280496+00:00",
+            "closed": "2026-05-04T16:14:29.116202+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/availability-hide-zero-qty-items",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6940",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "AVAILABILITY",
+            "type": "fix",
+            "product": "AVAILABILITY"
+          }
+        ],
         "FULFILL": [
+          {
+            "id": 7419,
+            "title": "feat(fulfill/inventory): orders tab on inventory side panel",
+            "repo": "worksuite-pwa",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-05-13T21:14:00.129616+00:00",
+            "closed": "2026-05-14T13:34:26.347388+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/helm-09796612-inventory-allocated-orders-tab",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7419",
+            "reviewers": [
+              "Scott Slattery",
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "FULFILL"
+          },
           {
             "id": 7183,
             "title": "feat(pwa): SendOrderEmails toggle (customer/location/order)",
@@ -7385,6 +7568,51 @@
             "work_stream": "MISC",
             "type": "feat",
             "product": "FULFILL"
+          },
+          {
+            "id": 7015,
+            "title": "feat: gate confirmation emails on effectiveSendOrderEmails \u2014 wsapi-services side",
+            "repo": "wsapi-services",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-05-05T21:10:18.493754+00:00",
+            "closed": "2026-05-07T00:01:56.773913+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/email-confirmation-toggle",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7015",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "FULFILL"
+          }
+        ],
+        "INVENTORY": [
+          {
+            "id": 7515,
+            "title": "feat(retail): track Quick Scan UOM per-mode (Credit defaults to Units)",
+            "repo": "inventory-pwa",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-05-14T19:38:30.741794+00:00",
+            "closed": "2026-05-18T14:03:46.321919+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/quickscan-per-mode-uom-default",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/inventory-pwa/pullrequest/7515",
+            "reviewers": [
+              "Scott Slattery",
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "RETAIL",
+            "type": "feat",
+            "product": "INVENTORY"
           }
         ],
         "PLATFORM": [
@@ -7411,27 +7639,6 @@
             "product": "PLATFORM"
           },
           {
-            "id": 7015,
-            "title": "feat: gate confirmation emails on effectiveSendOrderEmails \u2014 wsapi-services side",
-            "repo": "wsapi-services",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-05-05T21:10:18.493754+00:00",
-            "closed": "2026-05-07T00:01:56.773913+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/email-confirmation-toggle",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7015",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "PLATFORM"
-          },
-          {
             "id": 7179,
             "title": "fix(email-workers): dedup CCs against TO + gate Success on SendGrid IsSuccessStatusCode",
             "repo": "wsapi-services",
@@ -7452,98 +7659,6 @@
             "type": "fix",
             "product": "PLATFORM"
           }
-        ],
-        "PRODUCE": [
-          {
-            "id": 7515,
-            "title": "feat(retail): track Quick Scan UOM per-mode (Credit defaults to Units)",
-            "repo": "inventory-pwa",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-05-14T19:38:30.741794+00:00",
-            "closed": "2026-05-18T14:03:46.321919+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/quickscan-per-mode-uom-default",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/inventory-pwa/pullrequest/7515",
-            "reviewers": [
-              "Scott Slattery",
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "RETAIL",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
-            "id": 6408,
-            "title": "feat(availability): rebuild on perpetual inventory backend with offline queue + retry UI",
-            "repo": "worksuite-pwa",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-04-23T20:45:27.262790+00:00",
-            "closed": "2026-05-04T13:44:31.169331+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/availability-perpetual-inventory",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6408",
-            "reviewers": [
-              "Scott Slattery",
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "AVAILABILITY",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
-            "id": 7419,
-            "title": "feat(fulfill/inventory): orders tab on inventory side panel",
-            "repo": "worksuite-pwa",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-05-13T21:14:00.129616+00:00",
-            "closed": "2026-05-14T13:34:26.347388+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/helm-09796612-inventory-allocated-orders-tab",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7419",
-            "reviewers": [
-              "Scott Slattery",
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
-            "id": 6940,
-            "title": "fix(availability): hide depleted rows + harden persist rehydrate",
-            "repo": "worksuite-pwa",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-05-04T14:33:47.280496+00:00",
-            "closed": "2026-05-04T16:14:29.116202+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/availability-hide-zero-qty-items",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6940",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "AVAILABILITY",
-            "type": "fix",
-            "product": "PRODUCE"
-          }
         ]
       }
     },
@@ -7551,7 +7666,6 @@
       "name": "Isaac Short",
       "email": "isaac.short@silverfern.com",
       "pr_count": 13,
-      "suggested_reviewer": "Jared Leverington",
       "products": {
         "FULFILL": [
           {
@@ -7575,7 +7689,9 @@
             "work_stream": "ITEM",
             "type": "feat",
             "product": "FULFILL"
-          },
+          }
+        ],
+        "OTHER": [
           {
             "id": 7377,
             "title": "fix(erp-load-list): order session items by ErpItemId in DTO",
@@ -7595,7 +7711,7 @@
             "is_release": false,
             "work_stream": "ERP-LOAD-LIST",
             "type": "fix",
-            "product": "FULFILL"
+            "product": "OTHER"
           }
         ],
         "PLATFORM": [
@@ -7845,9 +7961,8 @@
       "name": "Jared Leverington",
       "email": "jleverington@silverfern.com",
       "pr_count": 2,
-      "suggested_reviewer": "John Beauford",
       "products": {
-        "FULFILL": [
+        "MOBILE": [
           {
             "id": 6750,
             "title": "feat(verify): mobile Verify module \u2014 orders list, detail, scan, submit (VER-03..09)",
@@ -7869,7 +7984,7 @@
             "is_release": false,
             "work_stream": "VERIFY",
             "type": "feat",
-            "product": "FULFILL"
+            "product": "MOBILE"
           }
         ],
         "RESTOCK": [
@@ -7903,9 +8018,8 @@
       "name": "John Beauford",
       "email": "jbeauford@silverfern.com",
       "pr_count": 1,
-      "suggested_reviewer": "Kennedy Kirk",
       "products": {
-        "OTHER": [
+        "INVENTORY": [
           {
             "id": 6730,
             "title": "feat(home): add Retail Intelligence app launcher tile",
@@ -7925,7 +8039,7 @@
             "is_release": false,
             "work_stream": "HOME",
             "type": "feat",
-            "product": "OTHER"
+            "product": "INVENTORY"
           }
         ]
       }
@@ -7934,9 +8048,29 @@
       "name": "Kennedy Kirk",
       "email": "kennedy@silverfern.com",
       "pr_count": 74,
-      "suggested_reviewer": "Kevin Short",
       "products": {
         "DEV-TOOLS": [
+          {
+            "id": 6754,
+            "title": "add AwaitingTesting status to HelmTask state machine",
+            "repo": "sf-ai-helm-api",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-04-30T15:33:04.158494+00:00",
+            "closed": "2026-04-30T16:21:04.260279+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/awaiting-testing-status",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-api/pullrequest/6754",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "DEV-TOOLS"
+          },
           {
             "id": 7130,
             "title": "feat(projects): AwaitingTesting project status",
@@ -8001,6 +8135,27 @@
             "product": "DEV-TOOLS"
           },
           {
+            "id": 6774,
+            "title": "add AwaitingTesting to HelmTaskStatus type, chip, filters and views",
+            "repo": "sf-ai-helm-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-04-30T18:08:45.660579+00:00",
+            "closed": "2026-05-01T14:33:13.464472+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/awaiting-testing-status",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-pwa/pullrequest/6774",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "DEV-TOOLS"
+          },
+          {
             "id": 7132,
             "title": "feat(projects): render AwaitingTesting project status",
             "repo": "sf-ai-helm-pwa",
@@ -8024,69 +8179,6 @@
         ],
         "FULFILL": [
           {
-            "id": 6754,
-            "title": "add AwaitingTesting status to HelmTask state machine",
-            "repo": "sf-ai-helm-api",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-04-30T15:33:04.158494+00:00",
-            "closed": "2026-04-30T16:21:04.260279+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/awaiting-testing-status",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-api/pullrequest/6754",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6763,
-            "title": "add AWAITING_TESTING to HelmTaskStatus enum and tool docs",
-            "repo": "sf-ai-helm-mcp",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-04-30T16:57:33.454674+00:00",
-            "closed": "2026-04-30T17:44:00.567674+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/awaiting-testing-status",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-mcp/pullrequest/6763",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6774,
-            "title": "add AwaitingTesting to HelmTaskStatus type, chip, filters and views",
-            "repo": "sf-ai-helm-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-04-30T18:08:45.660579+00:00",
-            "closed": "2026-05-01T14:33:13.464472+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/awaiting-testing-status",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-pwa/pullrequest/6774",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
             "id": 7394,
             "title": "Add Delete button to Terms admin (in-use + default guards)",
             "repo": "worksuite-pwa",
@@ -8105,28 +8197,6 @@
             ],
             "is_release": false,
             "work_stream": "MISC",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7390,
-            "title": "feat(csv-import): skip existing records on customer, terms, and price-group imports",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-13T17:12:31.627940+00:00",
-            "closed": "2026-05-14T14:06:15.406561+00:00",
-            "merge_status": "succeeded",
-            "source": "helm/idempotent-csv-imports",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7390",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "CSV-IMPORT",
             "type": "feat",
             "product": "FULFILL"
           },
@@ -8307,179 +8377,6 @@
             "product": "FULFILL"
           },
           {
-            "id": 6979,
-            "title": "feat(nav): Sales menu restructure with Pricing/Terms/Salespeople",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-05T14:06:02.960237+00:00",
-            "closed": "2026-05-05T14:36:23.516552+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/sales-menu-restructure",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6979",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "NAV",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6705,
-            "title": "feat(order): OrderSubtotal collapsible footer with discount, override, and customer-default auto-populate",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-04-29T13:19:09.913860+00:00",
-            "closed": "2026-04-30T18:36:42.680341+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/order-subtotal-discount-override",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6705",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "ORDER",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6701,
-            "title": "feat(order): OrderSubtotal collapsible footer with discount, override, and customer-default auto-populate",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-04-29T13:02:33.464899+00:00",
-            "closed": "2026-04-29T13:02:52.866623+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/order-subtotal-and-auto-populate",
-            "target": "feature/customer-discount-tax-exempt-ui",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6701",
-            "reviewers": [],
-            "is_release": false,
-            "work_stream": "ORDER",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6855,
-            "title": "feat(order): render Terms early-pay discount message inline with Due Date",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-01T18:16:09.456512+00:00",
-            "closed": "2026-05-04T15:05:09.562473+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/order-terms-discount-message",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6855",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "ORDER",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6956,
-            "title": "feat(order): show terms discount message on the editable OrderForm",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-04T17:43:51.860298+00:00",
-            "closed": "2026-05-04T19:35:41.970978+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/discount-message-on-orderform",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6956",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "ORDER",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7101,
-            "title": "feat(orders): order itemized tax display",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-07T13:16:42.553305+00:00",
-            "closed": "2026-05-08T15:51:14.941990+00:00",
-            "merge_status": "succeeded",
-            "source": "DEV-helm/order-itemized-tax-display",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7101",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "ORDERS",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7165,
-            "title": "feat(orders): structured status flow + null/zero ack-ship qty handling",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-08T14:33:42.719744+00:00",
-            "closed": "2026-05-08T18:27:46.000151+00:00",
-            "merge_status": "succeeded",
-            "source": "DEV-helm/order-form-null-zero",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7165",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "ORDERS",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7344,
-            "title": "feat(orders/import): historical orders \u2014 optional Status column",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-12T14:51:06.393659+00:00",
-            "closed": "2026-05-13T13:09:33.560257+00:00",
-            "merge_status": "succeeded",
-            "source": "helm/historical-order-import-status",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7344",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
             "id": 6966,
             "title": "feat(pwa): royalties on items + frozen snapshot on order lines (Phase 2)",
             "repo": "worksuite-pwa",
@@ -8498,28 +8395,6 @@
             ],
             "is_release": false,
             "work_stream": "PWA",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6703,
-            "title": "feat(terms): add Terms management UI under Pricing/Sales nav",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-04-29T13:12:28.596319+00:00",
-            "closed": "2026-05-01T13:46:47.835353+00:00",
-            "merge_status": "succeeded",
-            "source": "helm/terms-management-ui",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6703",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "TERMS",
             "type": "feat",
             "product": "FULFILL"
           },
@@ -8612,6 +8487,28 @@
             "product": "FULFILL"
           },
           {
+            "id": 7371,
+            "title": "fix(fulfill/product): inventory CSV template downloads on empty tenant",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-13T12:05:29.465419+00:00",
+            "closed": "2026-05-13T14:47:50.432896+00:00",
+            "merge_status": "succeeded",
+            "source": "helm/inventory-csv-template-empty-tenant",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7371",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "fix",
+            "product": "FULFILL"
+          },
+          {
             "id": 7345,
             "title": "fix(fulfill/product): keep grid populated after batch status changes",
             "repo": "worksuite-pwa",
@@ -8631,115 +8528,6 @@
             "is_release": false,
             "work_stream": "MISC",
             "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6955,
-            "title": "fix(orders): line totals fall back to base price when no override set",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-04T17:32:19.451701+00:00",
-            "closed": "2026-05-04T19:35:33.317814+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/order-line-total-fallback",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6955",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "ORDERS",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7340,
-            "title": "fix(orders): rename \"New Order\" -> \"Add Order\" + add_circle icon",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-12T14:32:23.012417+00:00",
-            "closed": "2026-05-12T14:44:40.087881+00:00",
-            "merge_status": "succeeded",
-            "source": "helm/order-list-add-order-button",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7340",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "ORDERS",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7387,
-            "title": "fix(orders): use openSnack pattern for OrderList load errors",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-13T16:37:28.313010+00:00",
-            "closed": "2026-05-13T17:26:52.251161+00:00",
-            "merge_status": "succeeded",
-            "source": "helm/orderlist-error-snack-pattern",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7387",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "ORDERS",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6839,
-            "title": "fix(terms): align Add/Edit Terms form fields with responsive grid",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-01T14:44:16.449027+00:00",
-            "closed": "2026-05-04T13:38:18.030568+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/terms-form-field-alignment",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6839",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "TERMS",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7393,
-            "title": "Add deleteTerms mutation with in-use and default guards",
-            "repo": "wsapi",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-13T17:59:00.401455+00:00",
-            "closed": "2026-05-13T23:48:09.820651+00:00",
-            "merge_status": "succeeded",
-            "source": "helm/terms-delete-unused",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7393",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
             "product": "FULFILL"
           },
           {
@@ -8784,196 +8572,30 @@
             "work_stream": "ITEM",
             "type": "feat",
             "product": "FULFILL"
-          },
+          }
+        ],
+        "INVENTORY": [
           {
-            "id": 6851,
-            "title": "feat(order): Order Terms Discount Message (Phase 2)",
-            "repo": "wsapi",
+            "id": 7118,
+            "title": "fix: send taxAuthorityIds on order customer location",
+            "repo": "inventory-pwa",
             "author": "Kennedy Kirk",
             "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-01T17:17:10.141127+00:00",
-            "closed": "2026-05-03T02:28:38.860297+00:00",
+            "created": "2026-05-07T17:21:40.347642+00:00",
+            "closed": "2026-05-07T17:31:01.786553+00:00",
             "merge_status": "succeeded",
-            "source": "feat/order-terms-discount-message",
+            "source": "fix/location-tax-authority-ids",
             "target": "master",
             "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6851",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/inventory-pwa/pullrequest/7118",
             "reviewers": [
+              "Scott Slattery",
               "Chris Christensen"
             ],
             "is_release": false,
-            "work_stream": "ORDER",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7111,
-            "title": "feat(orders): default ack/ship qty to null until status reaches each stage",
-            "repo": "wsapi",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-07T15:30:20.524147+00:00",
-            "closed": "2026-05-07T17:32:47.146337+00:00",
-            "merge_status": "succeeded",
-            "source": "DEV-helm/ord-ack-ship-redesign-v2",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7111",
-            "reviewers": [
-              "Kennedy Kirk",
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "ORDERS",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7071,
-            "title": "feat(orders): order tax calculation engine",
-            "repo": "wsapi",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-06T20:41:52.858381+00:00",
-            "closed": "2026-05-07T12:12:49.030683+00:00",
-            "merge_status": "succeeded",
-            "source": "DEV-helm/order-tax-calculation-engine",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7071",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "ORDERS",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6702,
-            "title": "feat(terms): add DiscountDays for early-pay discount terms",
-            "repo": "wsapi",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-04-29T13:10:23.558834+00:00",
-            "closed": "2026-04-29T17:35:27.720817+00:00",
-            "merge_status": "succeeded",
-            "source": "helm/terms-discount-days",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6702",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "TERMS",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7123,
-            "title": "fix(customer-location): make LocationData.TaxAuthorityIds nullable",
-            "repo": "wsapi",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-07T17:45:25.479367+00:00",
-            "closed": "2026-05-07T20:43:53.606239+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/location-data-tax-authority-ids-optional",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7123",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "CUSTOMER-LOCATION",
+            "work_stream": "MISC",
             "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6713,
-            "title": "fix(order): expose DiscountPercent as percent value + correct OrderTotal math",
-            "repo": "wsapi",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-04-29T16:12:59.403178+00:00",
-            "closed": "2026-04-29T18:58:04.010863+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/discount-percent-fraction-inconsistency",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6713",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "ORDER",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7124,
-            "title": "fix(orders): mirror tax fields onto OrderStateData boundary",
-            "repo": "wsapi",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-07T17:50:07.341170+00:00",
-            "closed": "2026-05-07T19:17:20.894727+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/order-state-data-tax-fields",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7124",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "ORDERS",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7103,
-            "title": "fix(orders): unbreak master pipeline after tax engine merge",
-            "repo": "wsapi",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-07T14:08:31.975083+00:00",
-            "closed": "2026-05-07T14:47:12.691038+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/wsapi-tax-engine-pipeline",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7103",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "ORDERS",
-            "type": "fix",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6737,
-            "title": "fix(terms): expose AccrueInterestPercentage as percent value at API boundary",
-            "repo": "wsapi",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-04-30T12:13:02.708329+00:00",
-            "closed": "2026-04-30T14:54:25.945492+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/terms-percent-at-boundary",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6737",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "TERMS",
-            "type": "fix",
-            "product": "FULFILL"
+            "product": "INVENTORY"
           }
         ],
         "OTHER": [
@@ -9000,6 +8622,179 @@
             "product": "OTHER"
           },
           {
+            "id": 6979,
+            "title": "feat(nav): Sales menu restructure with Pricing/Terms/Salespeople",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-05T14:06:02.960237+00:00",
+            "closed": "2026-05-05T14:36:23.516552+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/sales-menu-restructure",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6979",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "NAV",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 6705,
+            "title": "feat(order): OrderSubtotal collapsible footer with discount, override, and customer-default auto-populate",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-04-29T13:19:09.913860+00:00",
+            "closed": "2026-04-30T18:36:42.680341+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/order-subtotal-discount-override",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6705",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "ORDER",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 6701,
+            "title": "feat(order): OrderSubtotal collapsible footer with discount, override, and customer-default auto-populate",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-04-29T13:02:33.464899+00:00",
+            "closed": "2026-04-29T13:02:52.866623+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/order-subtotal-and-auto-populate",
+            "target": "feature/customer-discount-tax-exempt-ui",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6701",
+            "reviewers": [],
+            "is_release": false,
+            "work_stream": "ORDER",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 6855,
+            "title": "feat(order): render Terms early-pay discount message inline with Due Date",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-01T18:16:09.456512+00:00",
+            "closed": "2026-05-04T15:05:09.562473+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/order-terms-discount-message",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6855",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "ORDER",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 6956,
+            "title": "feat(order): show terms discount message on the editable OrderForm",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-04T17:43:51.860298+00:00",
+            "closed": "2026-05-04T19:35:41.970978+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/discount-message-on-orderform",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6956",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "ORDER",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 7101,
+            "title": "feat(orders): order itemized tax display",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-07T13:16:42.553305+00:00",
+            "closed": "2026-05-08T15:51:14.941990+00:00",
+            "merge_status": "succeeded",
+            "source": "DEV-helm/order-itemized-tax-display",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7101",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "ORDERS",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 7165,
+            "title": "feat(orders): structured status flow + null/zero ack-ship qty handling",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-08T14:33:42.719744+00:00",
+            "closed": "2026-05-08T18:27:46.000151+00:00",
+            "merge_status": "succeeded",
+            "source": "DEV-helm/order-form-null-zero",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7165",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "ORDERS",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 7344,
+            "title": "feat(orders/import): historical orders \u2014 optional Status column",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-12T14:51:06.393659+00:00",
+            "closed": "2026-05-13T13:09:33.560257+00:00",
+            "merge_status": "succeeded",
+            "source": "helm/historical-order-import-status",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7344",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
             "id": 7056,
             "title": "feat(royalty): gate all royalty UI behind RoyaltyEnabled flag",
             "repo": "worksuite-pwa",
@@ -9018,6 +8813,28 @@
             ],
             "is_release": false,
             "work_stream": "ROYALTY",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 6703,
+            "title": "feat(terms): add Terms management UI under Pricing/Sales nav",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-04-29T13:12:28.596319+00:00",
+            "closed": "2026-05-01T13:46:47.835353+00:00",
+            "merge_status": "succeeded",
+            "source": "helm/terms-management-ui",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6703",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "TERMS",
             "type": "feat",
             "product": "OTHER"
           },
@@ -9041,6 +8858,115 @@
             "is_release": false,
             "work_stream": "ITEMS",
             "type": "fix",
+            "product": "OTHER"
+          },
+          {
+            "id": 6955,
+            "title": "fix(orders): line totals fall back to base price when no override set",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-04T17:32:19.451701+00:00",
+            "closed": "2026-05-04T19:35:33.317814+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/order-line-total-fallback",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6955",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "ORDERS",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
+            "id": 7340,
+            "title": "fix(orders): rename \"New Order\" -> \"Add Order\" + add_circle icon",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-12T14:32:23.012417+00:00",
+            "closed": "2026-05-12T14:44:40.087881+00:00",
+            "merge_status": "succeeded",
+            "source": "helm/order-list-add-order-button",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7340",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "ORDERS",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
+            "id": 7387,
+            "title": "fix(orders): use openSnack pattern for OrderList load errors",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-13T16:37:28.313010+00:00",
+            "closed": "2026-05-13T17:26:52.251161+00:00",
+            "merge_status": "succeeded",
+            "source": "helm/orderlist-error-snack-pattern",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7387",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "ORDERS",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
+            "id": 6839,
+            "title": "fix(terms): align Add/Edit Terms form fields with responsive grid",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-01T14:44:16.449027+00:00",
+            "closed": "2026-05-04T13:38:18.030568+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/terms-form-field-alignment",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6839",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "TERMS",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
+            "id": 7393,
+            "title": "Add deleteTerms mutation with in-use and default guards",
+            "repo": "wsapi",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-13T17:59:00.401455+00:00",
+            "closed": "2026-05-13T23:48:09.820651+00:00",
+            "merge_status": "succeeded",
+            "source": "helm/terms-delete-unused",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7393",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
             "product": "OTHER"
           },
           {
@@ -9086,6 +9012,175 @@
             "product": "OTHER"
           },
           {
+            "id": 6851,
+            "title": "feat(order): Order Terms Discount Message (Phase 2)",
+            "repo": "wsapi",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-01T17:17:10.141127+00:00",
+            "closed": "2026-05-03T02:28:38.860297+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/order-terms-discount-message",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6851",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "ORDER",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 7111,
+            "title": "feat(orders): default ack/ship qty to null until status reaches each stage",
+            "repo": "wsapi",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-07T15:30:20.524147+00:00",
+            "closed": "2026-05-07T17:32:47.146337+00:00",
+            "merge_status": "succeeded",
+            "source": "DEV-helm/ord-ack-ship-redesign-v2",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7111",
+            "reviewers": [
+              "Kennedy Kirk",
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "ORDERS",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 7071,
+            "title": "feat(orders): order tax calculation engine",
+            "repo": "wsapi",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-06T20:41:52.858381+00:00",
+            "closed": "2026-05-07T12:12:49.030683+00:00",
+            "merge_status": "succeeded",
+            "source": "DEV-helm/order-tax-calculation-engine",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7071",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "ORDERS",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 6702,
+            "title": "feat(terms): add DiscountDays for early-pay discount terms",
+            "repo": "wsapi",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-04-29T13:10:23.558834+00:00",
+            "closed": "2026-04-29T17:35:27.720817+00:00",
+            "merge_status": "succeeded",
+            "source": "helm/terms-discount-days",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6702",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "TERMS",
+            "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 6713,
+            "title": "fix(order): expose DiscountPercent as percent value + correct OrderTotal math",
+            "repo": "wsapi",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-04-29T16:12:59.403178+00:00",
+            "closed": "2026-04-29T18:58:04.010863+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/discount-percent-fraction-inconsistency",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6713",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "ORDER",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
+            "id": 7124,
+            "title": "fix(orders): mirror tax fields onto OrderStateData boundary",
+            "repo": "wsapi",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-07T17:50:07.341170+00:00",
+            "closed": "2026-05-07T19:17:20.894727+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/order-state-data-tax-fields",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7124",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "ORDERS",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
+            "id": 7103,
+            "title": "fix(orders): unbreak master pipeline after tax engine merge",
+            "repo": "wsapi",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-07T14:08:31.975083+00:00",
+            "closed": "2026-05-07T14:47:12.691038+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/wsapi-tax-engine-pipeline",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7103",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "ORDERS",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
+            "id": 6737,
+            "title": "fix(terms): expose AccrueInterestPercentage as percent value at API boundary",
+            "repo": "wsapi",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-04-30T12:13:02.708329+00:00",
+            "closed": "2026-04-30T14:54:25.945492+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/terms-percent-at-boundary",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6737",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "TERMS",
+            "type": "fix",
+            "product": "OTHER"
+          },
+          {
             "id": 6693,
             "title": "revert: PR 6685 (fakes ASCII-only) \u2014 superseded by PR 6689",
             "repo": "wsapi",
@@ -9109,6 +9204,27 @@
         ],
         "PLATFORM": [
           {
+            "id": 6763,
+            "title": "add AWAITING_TESTING to HelmTaskStatus enum and tool docs",
+            "repo": "sf-ai-helm-mcp",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-04-30T16:57:33.454674+00:00",
+            "closed": "2026-04-30T17:44:00.567674+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/awaiting-testing-status",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-mcp/pullrequest/6763",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "PLATFORM"
+          },
+          {
             "id": 7391,
             "title": "Show all sites in locations grid; right-click expand/collapse",
             "repo": "worksuite-pwa",
@@ -9128,6 +9244,28 @@
             "is_release": false,
             "work_stream": "MISC",
             "type": "misc",
+            "product": "PLATFORM"
+          },
+          {
+            "id": 7390,
+            "title": "feat(csv-import): skip existing records on customer, terms, and price-group imports",
+            "repo": "worksuite-pwa",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-13T17:12:31.627940+00:00",
+            "closed": "2026-05-14T14:06:15.406561+00:00",
+            "merge_status": "succeeded",
+            "source": "helm/idempotent-csv-imports",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7390",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "CSV-IMPORT",
+            "type": "feat",
             "product": "PLATFORM"
           },
           {
@@ -9193,6 +9331,27 @@
             "is_release": false,
             "work_stream": "TAX",
             "type": "feat",
+            "product": "PLATFORM"
+          },
+          {
+            "id": 7123,
+            "title": "fix(customer-location): make LocationData.TaxAuthorityIds nullable",
+            "repo": "wsapi",
+            "author": "Kennedy Kirk",
+            "author_email": "kennedy@silverfern.com",
+            "created": "2026-05-07T17:45:25.479367+00:00",
+            "closed": "2026-05-07T20:43:53.606239+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/location-data-tax-authority-ids-optional",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7123",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "CUSTOMER-LOCATION",
+            "type": "fix",
             "product": "PLATFORM"
           },
           {
@@ -9303,28 +9462,6 @@
         ],
         "PRODUCE": [
           {
-            "id": 7118,
-            "title": "fix: send taxAuthorityIds on order customer location",
-            "repo": "inventory-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-07T17:21:40.347642+00:00",
-            "closed": "2026-05-07T17:31:01.786553+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/location-tax-authority-ids",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/inventory-pwa/pullrequest/7118",
-            "reviewers": [
-              "Scott Slattery",
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "fix",
-            "product": "PRODUCE"
-          },
-          {
             "id": 7749,
             "title": "Make Site location Address optional in form + CSV import",
             "repo": "worksuite-pwa",
@@ -9366,28 +9503,6 @@
             "is_release": false,
             "work_stream": "MISC",
             "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
-            "id": 7371,
-            "title": "fix(fulfill/product): inventory CSV template downloads on empty tenant",
-            "repo": "worksuite-pwa",
-            "author": "Kennedy Kirk",
-            "author_email": "kennedy@silverfern.com",
-            "created": "2026-05-13T12:05:29.465419+00:00",
-            "closed": "2026-05-13T14:47:50.432896+00:00",
-            "merge_status": "succeeded",
-            "source": "helm/inventory-csv-template-empty-tenant",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7371",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "fix",
             "product": "PRODUCE"
           },
           {
@@ -9546,8 +9661,54 @@
       "name": "Kevin Short",
       "email": "kevin@silverfern.com",
       "pr_count": 169,
-      "suggested_reviewer": "Nathan van Wingerden",
       "products": {
+        "AVAILABILITY": [
+          {
+            "id": 7444,
+            "title": "A4: Quantity Before/After audit panel on availability lot moves",
+            "repo": "worksuite-pwa",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-14T09:30:05.210841+00:00",
+            "closed": "2026-05-14T16:27:27.450707+00:00",
+            "merge_status": "succeeded",
+            "source": "autodev/a4-avail-audit",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7444",
+            "reviewers": [
+              "Nathan van Wingerden",
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "AVAILABILITY"
+          },
+          {
+            "id": 7744,
+            "title": "AV3: Availability History humanization + reason filter chips",
+            "repo": "worksuite-pwa",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-19T02:39:24.748134+00:00",
+            "closed": null,
+            "merge_status": "succeeded",
+            "source": "auto-dev/0b4fab95",
+            "target": "master",
+            "status": "active",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7744",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "AV",
+            "type": "feat",
+            "product": "AVAILABILITY"
+          }
+        ],
         "DEV-TOOLS": [
           {
             "id": 7243,
@@ -9770,28 +9931,6 @@
             "product": "DEV-TOOLS"
           },
           {
-            "id": 6731,
-            "title": "auto-dev-karpathy: demote Codex from authority to advisory",
-            "repo": "claude-code",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-04-30T09:29:36.649158+00:00",
-            "closed": "2026-04-30T09:30:52.444769+00:00",
-            "merge_status": "succeeded",
-            "source": "kevin/auto-dev-karpathy-codex-advisory",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/claude-code/pullrequest/6731",
-            "reviewers": [
-              "Kevin Short",
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "misc",
-            "product": "DEV-TOOLS"
-          },
-          {
             "id": 6859,
             "title": "auto-dev-karpathy: draft-PR pivot, conflict scan, schema breaking-change guard",
             "repo": "claude-code",
@@ -9858,28 +9997,6 @@
             "product": "DEV-TOOLS"
           },
           {
-            "id": 6722,
-            "title": "auto-dev: deterministic worksuite-pwa hygiene contract",
-            "repo": "claude-code",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-04-29T20:05:28.222965+00:00",
-            "closed": "2026-04-30T00:10:45.417204+00:00",
-            "merge_status": "succeeded",
-            "source": "kevin/worksuite-pwa-hygiene-contract",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/claude-code/pullrequest/6722",
-            "reviewers": [
-              "Kevin Short",
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "misc",
-            "product": "DEV-TOOLS"
-          },
-          {
             "id": 7703,
             "title": "auto-dev: enforce integration tests per vertical slice",
             "repo": "claude-code",
@@ -9892,28 +10009,6 @@
             "target": "main",
             "status": "merged",
             "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/claude-code/pullrequest/7703",
-            "reviewers": [
-              "Kevin Short",
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "misc",
-            "product": "DEV-TOOLS"
-          },
-          {
-            "id": 7538,
-            "title": "auto-dev: enforce worksuite-pwa hygiene from PR-comment audit",
-            "repo": "claude-code",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-15T09:25:49.277553+00:00",
-            "closed": "2026-05-15T10:15:48.167518+00:00",
-            "merge_status": "succeeded",
-            "source": "kevin/auto-dev-pwa-hygiene-from-pr-audit",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/claude-code/pullrequest/7538",
             "reviewers": [
               "Kevin Short",
               "Chris Christensen"
@@ -10028,28 +10123,6 @@
             "reviewers": [
               "Kevin Short",
               "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "misc",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7330,
-            "title": "MetricsPanel item filtering (v2 Orders)",
-            "repo": "worksuite-pwa",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-12T09:56:05.995267+00:00",
-            "closed": null,
-            "merge_status": "succeeded",
-            "source": "feat/metrics-panel-item-filter",
-            "target": "master",
-            "status": "active",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7330",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
             ],
             "is_release": false,
             "work_stream": "MISC",
@@ -10209,70 +10282,6 @@
             "product": "FULFILL"
           },
           {
-            "id": 7448,
-            "title": "Backfill ds-orders: add Freight, Royalty, Discount fields",
-            "repo": "wsapi",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-14T10:51:10.204733+00:00",
-            "closed": "2026-05-14T12:02:14.353208+00:00",
-            "merge_status": "succeeded",
-            "source": "autodev/ds-orders-backfill",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7448",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "misc",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6744,
-            "title": "Customer-specific additional SKUs / UPCs / retail price on CustomerItem",
-            "repo": "wsapi",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-04-30T13:51:08.826823+00:00",
-            "closed": "2026-04-30T18:05:16.861834+00:00",
-            "merge_status": "succeeded",
-            "source": "auto-dev/customer-sku-upc",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6744",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "misc",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7441,
-            "title": "CustomerItem v2: shelf price, dates on Update, typed errors",
-            "repo": "wsapi",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-14T00:33:10.819528+00:00",
-            "closed": "2026-05-14T10:19:51.043148+00:00",
-            "merge_status": "succeeded",
-            "source": "autodev/wsapi-customeritem-v2-bc384d06",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7441",
-            "reviewers": [
-              "Timothy Short",
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "misc",
-            "product": "FULFILL"
-          },
-          {
             "id": 7093,
             "title": "Exclude Deleted orders in ReportDataService.FetchOrders",
             "repo": "wsapi",
@@ -10285,48 +10294,6 @@
             "target": "master",
             "status": "merged",
             "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7093",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "misc",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7095,
-            "title": "[AUTO-DEV-FOLLOWUP] PullSlip FetchPullSlip arm + CSV/PDF/Excel export (F2)",
-            "repo": "wsapi",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-07T11:13:01.270341+00:00",
-            "closed": "2026-05-08T11:17:02.587200+00:00",
-            "merge_status": "succeeded",
-            "source": "auto-dev/pullslip-fetch-arm",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7095",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "misc",
-            "product": "FULFILL"
-          },
-          {
-            "id": 7529,
-            "title": "ddb05e80: Materialize TaskAssignments from job attachments",
-            "repo": "wsapi",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-15T01:15:54.934705+00:00",
-            "closed": null,
-            "merge_status": "succeeded",
-            "source": "auto-dev/job-task-materialize-2026-05-14",
-            "target": "master",
-            "status": "active",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7529",
             "reviewers": [
               "Chris Christensen"
             ],
@@ -10378,6 +10345,138 @@
             "product": "FULFILL"
           }
         ],
+        "MOBILE": [
+          {
+            "id": 7645,
+            "title": "MPR-04: Variance reason picker on mobile material receive",
+            "repo": "worksuite-pwa",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-16T22:16:59.984744+00:00",
+            "closed": "2026-05-18T15:20:03.577782+00:00",
+            "merge_status": "succeeded",
+            "source": "auto-dev/mpr-04",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7645",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "MPR",
+            "type": "feat",
+            "product": "MOBILE"
+          },
+          {
+            "id": 7600,
+            "title": "MPR-05: Receive audit drilldown view",
+            "repo": "worksuite-pwa",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-16T01:53:46.415641+00:00",
+            "closed": "2026-05-18T16:03:41.288820+00:00",
+            "merge_status": "succeeded",
+            "source": "auto-dev/mpr-05",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7600",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "MPR",
+            "type": "feat",
+            "product": "MOBILE"
+          },
+          {
+            "id": 7576,
+            "title": "ORG-09 + ORG-10 + MPR-02: Mobile PO receive UX \u2014 OrganicLotCode + Vendor Lot # per line",
+            "repo": "worksuite-pwa",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-15T18:20:59.060173+00:00",
+            "closed": "2026-05-18T17:13:07.036081+00:00",
+            "merge_status": "succeeded",
+            "source": "auto-dev/org-10",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7576",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "ORG",
+            "type": "feat",
+            "product": "MOBILE"
+          },
+          {
+            "id": 7091,
+            "title": "feat(engage): show last-count user + timestamp on Engage mobile location bar (A3)",
+            "repo": "worksuite-pwa",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-07T09:49:53.177315+00:00",
+            "closed": "2026-05-11T21:16:01.877435+00:00",
+            "merge_status": "succeeded",
+            "source": "auto-dev/engage-last-counted-chip",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7091",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "ENGAGE",
+            "type": "feat",
+            "product": "MOBILE"
+          },
+          {
+            "id": 7601,
+            "title": "MPR-01: VendorLotNumber on VPO receive (wsapi)",
+            "repo": "wsapi",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-16T01:54:04.940450+00:00",
+            "closed": "2026-05-16T03:17:29.961180+00:00",
+            "merge_status": "succeeded",
+            "source": "auto-dev/mpr-01",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7601",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MPR",
+            "type": "feat",
+            "product": "MOBILE"
+          },
+          {
+            "id": 7610,
+            "title": "MPR-03: Variance reason enum on VPO receive",
+            "repo": "wsapi",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-16T12:57:01.712887+00:00",
+            "closed": "2026-05-16T14:53:12.372102+00:00",
+            "merge_status": "succeeded",
+            "source": "auto-dev/mpr-03",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7610",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MPR",
+            "type": "feat",
+            "product": "MOBILE"
+          }
+        ],
         "OTHER": [
           {
             "id": 7465,
@@ -10416,6 +10515,28 @@
             "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6911",
             "reviewers": [
               "Scott Slattery",
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "OTHER"
+          },
+          {
+            "id": 7330,
+            "title": "MetricsPanel item filtering (v2 Orders)",
+            "repo": "worksuite-pwa",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-12T09:56:05.995267+00:00",
+            "closed": null,
+            "merge_status": "succeeded",
+            "source": "feat/metrics-panel-item-filter",
+            "target": "master",
+            "status": "active",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7330",
+            "reviewers": [
               "Chris Christensen",
               "Gabriela Gonzales"
             ],
@@ -10469,28 +10590,6 @@
             "product": "OTHER"
           },
           {
-            "id": 7091,
-            "title": "feat(engage): show last-count user + timestamp on Engage mobile location bar (A3)",
-            "repo": "worksuite-pwa",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-07T09:49:53.177315+00:00",
-            "closed": "2026-05-11T21:16:01.877435+00:00",
-            "merge_status": "succeeded",
-            "source": "auto-dev/engage-last-counted-chip",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7091",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "ENGAGE",
-            "type": "feat",
-            "product": "OTHER"
-          },
-          {
             "id": 7004,
             "title": "feat(scc): Align Shipping Config Categories page w/ Card view UI std",
             "repo": "worksuite-pwa",
@@ -10537,6 +10636,70 @@
             "product": "OTHER"
           },
           {
+            "id": 7448,
+            "title": "Backfill ds-orders: add Freight, Royalty, Discount fields",
+            "repo": "wsapi",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-14T10:51:10.204733+00:00",
+            "closed": "2026-05-14T12:02:14.353208+00:00",
+            "merge_status": "succeeded",
+            "source": "autodev/ds-orders-backfill",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7448",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "OTHER"
+          },
+          {
+            "id": 6744,
+            "title": "Customer-specific additional SKUs / UPCs / retail price on CustomerItem",
+            "repo": "wsapi",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-04-30T13:51:08.826823+00:00",
+            "closed": "2026-04-30T18:05:16.861834+00:00",
+            "merge_status": "succeeded",
+            "source": "auto-dev/customer-sku-upc",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6744",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "OTHER"
+          },
+          {
+            "id": 7441,
+            "title": "CustomerItem v2: shelf price, dates on Update, typed errors",
+            "repo": "wsapi",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-14T00:33:10.819528+00:00",
+            "closed": "2026-05-14T10:19:51.043148+00:00",
+            "merge_status": "succeeded",
+            "source": "autodev/wsapi-customeritem-v2-bc384d06",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7441",
+            "reviewers": [
+              "Timothy Short",
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "OTHER"
+          },
+          {
             "id": 7262,
             "title": "Site TZ derivation: explicit-set precedence + split-state ZIP coverage",
             "repo": "wsapi",
@@ -10549,6 +10712,27 @@
             "target": "master",
             "status": "merged",
             "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7262",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "OTHER"
+          },
+          {
+            "id": 7095,
+            "title": "[AUTO-DEV-FOLLOWUP] PullSlip FetchPullSlip arm + CSV/PDF/Excel export (F2)",
+            "repo": "wsapi",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-07T11:13:01.270341+00:00",
+            "closed": "2026-05-08T11:17:02.587200+00:00",
+            "merge_status": "succeeded",
+            "source": "auto-dev/pullslip-fetch-arm",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7095",
             "reviewers": [
               "Chris Christensen"
             ],
@@ -10600,6 +10784,27 @@
             "product": "OTHER"
           },
           {
+            "id": 7529,
+            "title": "ddb05e80: Materialize TaskAssignments from job attachments",
+            "repo": "wsapi",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-15T01:15:54.934705+00:00",
+            "closed": null,
+            "merge_status": "succeeded",
+            "source": "auto-dev/job-task-materialize-2026-05-14",
+            "target": "master",
+            "status": "active",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7529",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "OTHER"
+          },
+          {
             "id": 7039,
             "title": "feat(valid-iana-timezone): add Utc sentinel for UTC fallback callers",
             "repo": "wsapi",
@@ -10618,6 +10823,27 @@
             "is_release": false,
             "work_stream": "VALID-IANA-TIMEZONE",
             "type": "feat",
+            "product": "OTHER"
+          },
+          {
+            "id": 6769,
+            "title": "fix(production-lot): tighten CustomerId/JobIds command validation via ValidIdStrict",
+            "repo": "wsapi",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-04-30T17:38:36.236834+00:00",
+            "closed": "2026-04-30T21:27:37.293579+00:00",
+            "merge_status": "succeeded",
+            "source": "autodev/cmd-validation-28fb0051",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6769",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "PRODUCTION-LOT",
+            "type": "fix",
             "product": "OTHER"
           },
           {
@@ -10665,6 +10891,28 @@
         ],
         "PLATFORM": [
           {
+            "id": 6731,
+            "title": "auto-dev-karpathy: demote Codex from authority to advisory",
+            "repo": "claude-code",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-04-30T09:29:36.649158+00:00",
+            "closed": "2026-04-30T09:30:52.444769+00:00",
+            "merge_status": "succeeded",
+            "source": "kevin/auto-dev-karpathy-codex-advisory",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/claude-code/pullrequest/6731",
+            "reviewers": [
+              "Kevin Short",
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "PLATFORM"
+          },
+          {
             "id": 7526,
             "title": "auto-dev-karpathy: mongo migration gate + Job rollout coupling check",
             "repo": "claude-code",
@@ -10677,6 +10925,50 @@
             "target": "main",
             "status": "merged",
             "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/claude-code/pullrequest/7526",
+            "reviewers": [
+              "Kevin Short",
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "PLATFORM"
+          },
+          {
+            "id": 6722,
+            "title": "auto-dev: deterministic worksuite-pwa hygiene contract",
+            "repo": "claude-code",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-04-29T20:05:28.222965+00:00",
+            "closed": "2026-04-30T00:10:45.417204+00:00",
+            "merge_status": "succeeded",
+            "source": "kevin/worksuite-pwa-hygiene-contract",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/claude-code/pullrequest/6722",
+            "reviewers": [
+              "Kevin Short",
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "misc",
+            "product": "PLATFORM"
+          },
+          {
+            "id": 7538,
+            "title": "auto-dev: enforce worksuite-pwa hygiene from PR-comment audit",
+            "repo": "claude-code",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-15T09:25:49.277553+00:00",
+            "closed": "2026-05-15T10:15:48.167518+00:00",
+            "merge_status": "succeeded",
+            "source": "kevin/auto-dev-pwa-hygiene-from-pr-audit",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/claude-code/pullrequest/7538",
             "reviewers": [
               "Kevin Short",
               "Chris Christensen"
@@ -11016,51 +11308,6 @@
             "product": "PRODUCE"
           },
           {
-            "id": 7444,
-            "title": "A4: Quantity Before/After audit panel on availability lot moves",
-            "repo": "worksuite-pwa",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-14T09:30:05.210841+00:00",
-            "closed": "2026-05-14T16:27:27.450707+00:00",
-            "merge_status": "succeeded",
-            "source": "autodev/a4-avail-audit",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7444",
-            "reviewers": [
-              "Nathan van Wingerden",
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "misc",
-            "product": "PRODUCE"
-          },
-          {
-            "id": 7744,
-            "title": "AV3: Availability History humanization + reason filter chips",
-            "repo": "worksuite-pwa",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-19T02:39:24.748134+00:00",
-            "closed": null,
-            "merge_status": "succeeded",
-            "source": "auto-dev/0b4fab95",
-            "target": "master",
-            "status": "active",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7744",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "AV",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
             "id": 7729,
             "title": "MAT-HIST-01: Humanize reasonCode in TransactionCard",
             "repo": "worksuite-pwa",
@@ -11083,50 +11330,6 @@
             "product": "PRODUCE"
           },
           {
-            "id": 7645,
-            "title": "MPR-04: Variance reason picker on mobile material receive",
-            "repo": "worksuite-pwa",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-16T22:16:59.984744+00:00",
-            "closed": "2026-05-18T15:20:03.577782+00:00",
-            "merge_status": "succeeded",
-            "source": "auto-dev/mpr-04",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7645",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "MPR",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
-            "id": 7600,
-            "title": "MPR-05: Receive audit drilldown view",
-            "repo": "worksuite-pwa",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-16T01:53:46.415641+00:00",
-            "closed": "2026-05-18T16:03:41.288820+00:00",
-            "merge_status": "succeeded",
-            "source": "auto-dev/mpr-05",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7600",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "MPR",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
             "id": 7753,
             "title": "MTR-05+: Material Move + Receive Transfer UI + E2E",
             "repo": "worksuite-pwa",
@@ -11145,28 +11348,6 @@
             ],
             "is_release": false,
             "work_stream": "MTR",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
-            "id": 7576,
-            "title": "ORG-09 + ORG-10 + MPR-02: Mobile PO receive UX \u2014 OrganicLotCode + Vendor Lot # per line",
-            "repo": "worksuite-pwa",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-15T18:20:59.060173+00:00",
-            "closed": "2026-05-18T17:13:07.036081+00:00",
-            "merge_status": "succeeded",
-            "source": "auto-dev/org-10",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7576",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "ORG",
             "type": "feat",
             "product": "PRODUCE"
           },
@@ -11699,48 +11880,6 @@
             "product": "PRODUCE"
           },
           {
-            "id": 6880,
-            "title": "Add reportInventoryTransactionsData data source (new)",
-            "repo": "wsapi",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-02T09:49:13.220319+00:00",
-            "closed": "2026-05-03T17:31:35.470877+00:00",
-            "merge_status": "succeeded",
-            "source": "auto-dev/reports-lane-1-kickoff-011c41146a49489d87535765b593d763",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6880",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
-            "id": 6888,
-            "title": "Add reportProductionLotsData data source (new)",
-            "repo": "wsapi",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-02T11:36:33.423906+00:00",
-            "closed": "2026-05-02T15:23:22.066778+00:00",
-            "merge_status": "succeeded",
-            "source": "auto-dev/reports-lane-3-kickoff-9f56959b99c5424283655192b16759a8",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6888",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
             "id": 6905,
             "title": "Add reportRecipeProfitabilityData data source (new)",
             "repo": "wsapi",
@@ -11985,48 +12124,6 @@
             ],
             "is_release": false,
             "work_stream": "HGI",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
-            "id": 7601,
-            "title": "MPR-01: VendorLotNumber on VPO receive (wsapi)",
-            "repo": "wsapi",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-16T01:54:04.940450+00:00",
-            "closed": "2026-05-16T03:17:29.961180+00:00",
-            "merge_status": "succeeded",
-            "source": "auto-dev/mpr-01",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7601",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MPR",
-            "type": "feat",
-            "product": "PRODUCE"
-          },
-          {
-            "id": 7610,
-            "title": "MPR-03: Variance reason enum on VPO receive",
-            "repo": "wsapi",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-05-16T12:57:01.712887+00:00",
-            "closed": "2026-05-16T14:53:12.372102+00:00",
-            "merge_status": "succeeded",
-            "source": "auto-dev/mpr-03",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7610",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MPR",
             "type": "feat",
             "product": "PRODUCE"
           },
@@ -12746,27 +12843,6 @@
             "product": "PRODUCE"
           },
           {
-            "id": 6769,
-            "title": "fix(production-lot): tighten CustomerId/JobIds command validation via ValidIdStrict",
-            "repo": "wsapi",
-            "author": "Kevin Short",
-            "author_email": "kevin@silverfern.com",
-            "created": "2026-04-30T17:38:36.236834+00:00",
-            "closed": "2026-04-30T21:27:37.293579+00:00",
-            "merge_status": "succeeded",
-            "source": "autodev/cmd-validation-28fb0051",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6769",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "PRODUCTION-LOT",
-            "type": "fix",
-            "product": "PRODUCE"
-          },
-          {
             "id": 7563,
             "title": "ORG-08: OrganicReceiveMode warn/block toggle UI (admin-pwa)",
             "repo": "wsapi-admin-pwa",
@@ -12871,6 +12947,48 @@
             "target": "master",
             "status": "merged",
             "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6913",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "REPORTS"
+          },
+          {
+            "id": 6880,
+            "title": "Add reportInventoryTransactionsData data source (new)",
+            "repo": "wsapi",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-02T09:49:13.220319+00:00",
+            "closed": "2026-05-03T17:31:35.470877+00:00",
+            "merge_status": "succeeded",
+            "source": "auto-dev/reports-lane-1-kickoff-011c41146a49489d87535765b593d763",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6880",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "REPORTS"
+          },
+          {
+            "id": 6888,
+            "title": "Add reportProductionLotsData data source (new)",
+            "repo": "wsapi",
+            "author": "Kevin Short",
+            "author_email": "kevin@silverfern.com",
+            "created": "2026-05-02T11:36:33.423906+00:00",
+            "closed": "2026-05-02T15:23:22.066778+00:00",
+            "merge_status": "succeeded",
+            "source": "auto-dev/reports-lane-3-kickoff-9f56959b99c5424283655192b16759a8",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6888",
             "reviewers": [
               "Chris Christensen"
             ],
@@ -13208,7 +13326,6 @@
       "name": "Nathan van Wingerden",
       "email": "nathan@silverfern.com",
       "pr_count": 15,
-      "suggested_reviewer": "Robert Williams",
       "products": {
         "DEV-TOOLS": [
           {
@@ -13229,6 +13346,27 @@
             ],
             "is_release": false,
             "work_stream": "SPRINTS",
+            "type": "feat",
+            "product": "DEV-TOOLS"
+          },
+          {
+            "id": 6767,
+            "title": "feat(tasks): add AUTO_DEV status for autodev-only pickup",
+            "repo": "sf-ai-helm-api",
+            "author": "Nathan van Wingerden",
+            "author_email": "nathan@silverfern.com",
+            "created": "2026-04-30T17:28:51.004908+00:00",
+            "closed": "2026-04-30T18:09:25.838632+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/autodev-status",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-api/pullrequest/6767",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "TASKS",
             "type": "feat",
             "product": "DEV-TOOLS"
           },
@@ -13298,49 +13436,7 @@
             "product": "DEV-TOOLS"
           }
         ],
-        "FULFILL": [
-          {
-            "id": 6767,
-            "title": "feat(tasks): add AUTO_DEV status for autodev-only pickup",
-            "repo": "sf-ai-helm-api",
-            "author": "Nathan van Wingerden",
-            "author_email": "nathan@silverfern.com",
-            "created": "2026-04-30T17:28:51.004908+00:00",
-            "closed": "2026-04-30T18:09:25.838632+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/autodev-status",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-api/pullrequest/6767",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "TASKS",
-            "type": "feat",
-            "product": "FULFILL"
-          },
-          {
-            "id": 6768,
-            "title": "feat(tasks): support AUTO_DEV status in MCP tools",
-            "repo": "sf-ai-helm-mcp",
-            "author": "Nathan van Wingerden",
-            "author_email": "nathan@silverfern.com",
-            "created": "2026-04-30T17:31:02.790610+00:00",
-            "closed": "2026-04-30T17:53:15.814948+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/autodev-status",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-mcp/pullrequest/6768",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "TASKS",
-            "type": "feat",
-            "product": "FULFILL"
-          },
+        "OTHER": [
           {
             "id": 7516,
             "title": "[UI PROTO] Material \u2014 Transfer Order Receive (BPF G4)",
@@ -13360,7 +13456,7 @@
             "is_release": false,
             "work_stream": "MISC",
             "type": "misc",
-            "product": "FULFILL"
+            "product": "OTHER"
           }
         ],
         "PLATFORM": [
@@ -13382,6 +13478,27 @@
             ],
             "is_release": false,
             "work_stream": "SPRINTS",
+            "type": "feat",
+            "product": "PLATFORM"
+          },
+          {
+            "id": 6768,
+            "title": "feat(tasks): support AUTO_DEV status in MCP tools",
+            "repo": "sf-ai-helm-mcp",
+            "author": "Nathan van Wingerden",
+            "author_email": "nathan@silverfern.com",
+            "created": "2026-04-30T17:31:02.790610+00:00",
+            "closed": "2026-04-30T17:53:15.814948+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/autodev-status",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/sf-ai-helm-mcp/pullrequest/6768",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "TASKS",
             "type": "feat",
             "product": "PLATFORM"
           }
@@ -13544,7 +13661,6 @@
       "name": "Robert Williams",
       "email": "robw@silverfern.com",
       "pr_count": 5,
-      "suggested_reviewer": "Scott Slattery",
       "products": {
         "PLATFORM": [
           {
@@ -13660,29 +13776,76 @@
       "name": "Scott Slattery",
       "email": "scott@silverfern.com",
       "pr_count": 14,
-      "suggested_reviewer": "Stephen van Wingerden",
       "products": {
-        "FULFILL": [
+        "AVAILABILITY": [
           {
-            "id": 6748,
-            "title": "feat(material): enrich MaterialTransaction with ToLocationName, VendorName, PurchaseOrderNumber",
-            "repo": "wsapi",
+            "id": 7489,
+            "title": "fix(mobile/availability): reopen location drilldown at parent level on Change",
+            "repo": "worksuite-pwa",
             "author": "Scott Slattery",
             "author_email": "scott@silverfern.com",
-            "created": "2026-04-30T14:49:48.278560+00:00",
-            "closed": "2026-04-30T23:42:08.924254+00:00",
+            "created": "2026-05-14T15:26:10.218803+00:00",
+            "closed": "2026-05-14T16:22:13.417672+00:00",
             "merge_status": "succeeded",
-            "source": "feat/material-transaction-projection",
+            "source": "fix/availability-location-change-reopen",
             "target": "master",
             "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6748",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7489",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "fix",
+            "product": "AVAILABILITY"
+          }
+        ],
+        "FULFILL": [
+          {
+            "id": 6745,
+            "title": "feat(k8s): add ReportScheduleExecution worker deployments",
+            "repo": "wsapi-services",
+            "author": "Scott Slattery",
+            "author_email": "scott@silverfern.com",
+            "created": "2026-04-30T14:06:38.353121+00:00",
+            "closed": "2026-05-06T22:14:35.357577+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/report-schedule-execution-k8s-deploy",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/6745",
             "reviewers": [
               "Chris Christensen"
             ],
             "is_release": false,
-            "work_stream": "MATERIAL",
+            "work_stream": "MISC",
             "type": "feat",
             "product": "FULFILL"
+          }
+        ],
+        "MOBILE": [
+          {
+            "id": 7083,
+            "title": "feat(mobile): add unified sync status banner across mobile apps",
+            "repo": "worksuite-pwa",
+            "author": "Scott Slattery",
+            "author_email": "scott@silverfern.com",
+            "created": "2026-05-07T01:27:28.787876+00:00",
+            "closed": "2026-05-08T16:10:17.623589+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/mobile-sync-status-banner",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7083",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "MOBILE",
+            "type": "feat",
+            "product": "MOBILE"
           }
         ],
         "OTHER": [
@@ -13709,24 +13872,23 @@
             "product": "OTHER"
           },
           {
-            "id": 7083,
-            "title": "feat(mobile): add unified sync status banner across mobile apps",
-            "repo": "worksuite-pwa",
+            "id": 6748,
+            "title": "feat(material): enrich MaterialTransaction with ToLocationName, VendorName, PurchaseOrderNumber",
+            "repo": "wsapi",
             "author": "Scott Slattery",
             "author_email": "scott@silverfern.com",
-            "created": "2026-05-07T01:27:28.787876+00:00",
-            "closed": "2026-05-08T16:10:17.623589+00:00",
+            "created": "2026-04-30T14:49:48.278560+00:00",
+            "closed": "2026-04-30T23:42:08.924254+00:00",
             "merge_status": "succeeded",
-            "source": "feature/mobile-sync-status-banner",
+            "source": "feat/material-transaction-projection",
             "target": "master",
             "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7083",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6748",
             "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
+              "Chris Christensen"
             ],
             "is_release": false,
-            "work_stream": "MOBILE",
+            "work_stream": "MATERIAL",
             "type": "feat",
             "product": "OTHER"
           }
@@ -13793,30 +13955,6 @@
             "work_stream": "DOCKER",
             "type": "fix",
             "product": "PLATFORM"
-          }
-        ],
-        "PRODUCE": [
-          {
-            "id": 7489,
-            "title": "fix(mobile/availability): reopen location drilldown at parent level on Change",
-            "repo": "worksuite-pwa",
-            "author": "Scott Slattery",
-            "author_email": "scott@silverfern.com",
-            "created": "2026-05-14T15:26:10.218803+00:00",
-            "closed": "2026-05-14T16:22:13.417672+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/availability-location-change-reopen",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7489",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "fix",
-            "product": "PRODUCE"
           }
         ],
         "REPORTS": [
@@ -13907,27 +14045,6 @@
             "product": "REPORTS"
           },
           {
-            "id": 6745,
-            "title": "feat(k8s): add ReportScheduleExecution worker deployments",
-            "repo": "wsapi-services",
-            "author": "Scott Slattery",
-            "author_email": "scott@silverfern.com",
-            "created": "2026-04-30T14:06:38.353121+00:00",
-            "closed": "2026-05-06T22:14:35.357577+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/report-schedule-execution-k8s-deploy",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/6745",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "REPORTS"
-          },
-          {
             "id": 7407,
             "title": "feat(report-schedule): support report schedule time zones and active windows",
             "repo": "wsapi-services",
@@ -13976,7 +14093,6 @@
       "name": "Stephen van Wingerden",
       "email": "stephen@silverfern.com",
       "pr_count": 2,
-      "suggested_reviewer": "Timothy Short",
       "products": {
         "RESTOCK": [
           {
@@ -14031,7 +14147,6 @@
       "name": "Timothy Short",
       "email": "timothy.short@silverfern.com",
       "pr_count": 58,
-      "suggested_reviewer": "Chris Christensen",
       "products": {
         "FORECAST/DBR": [
           {
@@ -15956,5 +16071,5 @@
       "product": "FORECAST/DBR"
     }
   ],
-  "generated_at": "2026-05-19T13:45:29.133492"
+  "generated_at": "2026-05-19T14:01:54.599619"
 }
