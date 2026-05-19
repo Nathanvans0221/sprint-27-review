@@ -4,7 +4,31 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Sprint 27 Review — Silver Fern</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=PT+Serif:ital@1&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'rich-soil':    '#3F4948',
+          'rich-soil-2':  '#2E3635',
+          'fern':         '#69936C',
+          'fern-dark':    '#557A58',
+          'stirling':     '#B3B3B3',
+          'light-silver': '#F2F2F2',
+          'spring-green': '#A1DBA6',
+        },
+        fontFamily: {
+          'mont': ['Montserrat', 'Arial', 'sans-serif'],
+          'serif-italic': ['"PT Serif"', 'Georgia', 'serif'],
+        },
+      },
+    },
+  };
+</script>
 <style>
   :root {
     --fulfill:#BA3636;
@@ -14,30 +38,90 @@
     --platform:#6B7280;
     --devtools:#7C3AED;
     --reports:#059669;
+    --mobile:#0EA5E9;
+    --availability:#10B981;
+    --inventory:#F59E0B;
     --other:#9CA3AF;
+
+    --sf-rich-soil: #3F4948;
+    --sf-fern: #69936C;
+    --sf-stirling: #B3B3B3;
+    --sf-light-silver: #F2F2F2;
+    --sf-spring-green: #A1DBA6;
   }
-  .product-RESTOCK { --pc: var(--restock); }
-  .product-PRODUCE { --pc: var(--produce); }
-  .product-FULFILL { --pc: var(--fulfill); }
-  .product-FORECAST\/DBR { --pc: var(--forecast); }
-  .product-PLATFORM { --pc: var(--platform); }
-  .product-DEV-TOOLS { --pc: var(--devtools); }
-  .product-REPORTS { --pc: var(--reports); }
-  .product-OTHER { --pc: var(--other); }
+  body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 300;
+    color: var(--sf-rich-soil);
+    background: var(--sf-light-silver);
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4 { font-family: 'Montserrat', Arial, sans-serif; color: var(--sf-rich-soil); }
+  .sf-h1 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+  }
+  .sf-h2 {
+    font-family: 'PT Serif', Georgia, serif;
+    font-style: italic;
+    color: var(--sf-fern);
+    letter-spacing: 0.01em;
+  }
+  .sf-h3 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 600;
+    color: var(--sf-rich-soil);
+  }
+  .sf-eyebrow {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 11px;
+    color: var(--sf-fern);
+  }
   .chip {
-    display:inline-flex; align-items:center; padding:2px 8px;
+    display:inline-flex; align-items:center; padding:2px 10px;
     border-radius:9999px; font-size:11px; font-weight:600;
-    background:var(--pc, #e5e7eb); color:white;
+    background:var(--pc, var(--sf-stirling)); color:white;
+    letter-spacing: 0.04em;
   }
   details summary { cursor:pointer; list-style:none; }
   details summary::-webkit-details-marker { display:none; }
   details[open] summary .chev { transform: rotate(90deg); }
   .chev { transition: transform .15s ease; display:inline-block; }
-  .pr-row:hover { background:#f8fafc; }
+  .pr-row:hover { background:rgba(105,147,108,0.06); }
   .sticky-top { position: sticky; top: 0; z-index: 10; }
+  .sf-card {
+    background: white;
+    border: 1px solid #E5E7E5;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(63,73,72,0.04);
+  }
+  .sf-card-hover:hover {
+    box-shadow: 0 4px 12px rgba(63,73,72,0.08);
+    border-color: var(--sf-fern);
+  }
+  .sf-pick-row {
+    background: linear-gradient(90deg, rgba(161,219,166,0.18) 0%, rgba(161,219,166,0.06) 100%);
+    border-left: 3px solid var(--sf-fern);
+  }
+  .sf-pick-row:hover { background: rgba(161,219,166,0.28); }
+  .former-tag {
+    background: var(--sf-stirling);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
 </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body>
 <div id="root"></div>
 
 <script id="bootstrap-data" type="application/json">{
@@ -6630,162 +6714,10 @@
         7726,
         7580,
         7167,
-        7571
-      ]
-    },
-    {
-      "name": "Eric Whitlow",
-      "email": "eric@silverfern.com",
-      "pr_count": 6,
-      "products": {
-        "FORECAST/DBR": [
-          {
-            "id": 6960,
-            "title": "Fix DBR session order item duplication from ErpItemPricing join",
-            "repo": "wsapi",
-            "author": "Eric Whitlow",
-            "author_email": "eric@silverfern.com",
-            "created": "2026-05-04T19:22:37.938383+00:00",
-            "closed": "2026-05-04T20:00:54.373085+00:00",
-            "merge_status": "succeeded",
-            "source": "fix-dbr-erp-pricing-join-duplication",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6960",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "fix",
-            "product": "FORECAST/DBR",
-            "review_score": 0
-          },
-          {
-            "id": 6989,
-            "title": "feat(dbr-calc): convert CalcSteps Context strings to display unit",
-            "repo": "wsapi",
-            "author": "Eric Whitlow",
-            "author_email": "eric@silverfern.com",
-            "created": "2026-05-05T15:36:41.143351+00:00",
-            "closed": "2026-05-05T19:06:30.535175+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/calcsteps-display-unit-conversion",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6989",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "DBR-CALC",
-            "type": "feat",
-            "product": "FORECAST/DBR",
-            "review_score": 1
-          }
-        ],
-        "PRODUCE": [
-          {
-            "id": 6984,
-            "title": "feat(allocation): convert ERP availability to display unit",
-            "repo": "wsapi",
-            "author": "Eric Whitlow",
-            "author_email": "eric@silverfern.com",
-            "created": "2026-05-05T14:25:52.836781+00:00",
-            "closed": "2026-05-05T18:48:15.034794+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/allocate-erp-unit-conversion",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6984",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "ALLOCATION",
-            "type": "feat",
-            "product": "PRODUCE",
-            "review_score": 1
-          }
-        ],
-        "RESTOCK": [
-          {
-            "id": 6781,
-            "title": "feat(restock): tenant-aware display-unit labels (Eaches/Trays)",
-            "repo": "worksuite-pwa",
-            "author": "Eric Whitlow",
-            "author_email": "eric@silverfern.com",
-            "created": "2026-04-30T18:32:23.067670+00:00",
-            "closed": "2026-05-01T15:01:20.770025+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/restock-tenant-unit-config",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6781",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "RESTOCK",
-            "type": "feat",
-            "product": "RESTOCK",
-            "review_score": 1
-          },
-          {
-            "id": 6938,
-            "title": "fix(restock): suppress display-unit label while tenant query loads",
-            "repo": "worksuite-pwa",
-            "author": "Eric Whitlow",
-            "author_email": "eric@silverfern.com",
-            "created": "2026-05-04T13:51:39.104006+00:00",
-            "closed": "2026-05-04T15:32:26.455833+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/restock-display-unit-loading-flicker",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6938",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "RESTOCK",
-            "type": "fix",
-            "product": "RESTOCK",
-            "review_score": 1
-          },
-          {
-            "id": 6779,
-            "title": "feat(restock): per-tenant unit configuration",
-            "repo": "wsapi",
-            "author": "Eric Whitlow",
-            "author_email": "eric@silverfern.com",
-            "created": "2026-04-30T18:20:13.552552+00:00",
-            "closed": "2026-05-01T14:58:33.201400+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/restock-tenant-unit-config",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6779",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "RESTOCK",
-            "type": "feat",
-            "product": "RESTOCK",
-            "review_score": 1
-          }
-        ]
-      },
-      "review_picks": [
-        7670,
-        7434,
-        7726,
-        7673,
-        7728
-      ]
+        7571,
+        7215
+      ],
+      "former": false
     },
     {
       "name": "Ethan Boss",
@@ -7540,9 +7472,11 @@
         7670,
         7434,
         7726,
+        7673,
         7679,
-        7673
-      ]
+        7649
+      ],
+      "former": false
     },
     {
       "name": "Gabriela Gonzales",
@@ -7813,262 +7747,13 @@
       },
       "review_picks": [
         7670,
-        7576,
-        7580,
-        7571,
-        7728
-      ]
-    },
-    {
-      "name": "Gustavo Cota",
-      "email": "gustavo.cota@silverfern.com",
-      "pr_count": 10,
-      "products": {
-        "AVAILABILITY": [
-          {
-            "id": 6408,
-            "title": "feat(availability): rebuild on perpetual inventory backend with offline queue + retry UI",
-            "repo": "worksuite-pwa",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-04-23T20:45:27.262790+00:00",
-            "closed": "2026-05-04T13:44:31.169331+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/availability-perpetual-inventory",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6408",
-            "reviewers": [
-              "Scott Slattery",
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "AVAILABILITY",
-            "type": "feat",
-            "product": "AVAILABILITY",
-            "review_score": 3
-          },
-          {
-            "id": 6940,
-            "title": "fix(availability): hide depleted rows + harden persist rehydrate",
-            "repo": "worksuite-pwa",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-05-04T14:33:47.280496+00:00",
-            "closed": "2026-05-04T16:14:29.116202+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/availability-hide-zero-qty-items",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6940",
-            "reviewers": [
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "AVAILABILITY",
-            "type": "fix",
-            "product": "AVAILABILITY",
-            "review_score": 1
-          }
-        ],
-        "FULFILL": [
-          {
-            "id": 7419,
-            "title": "feat(fulfill/inventory): orders tab on inventory side panel",
-            "repo": "worksuite-pwa",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-05-13T21:14:00.129616+00:00",
-            "closed": "2026-05-14T13:34:26.347388+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/helm-09796612-inventory-allocated-orders-tab",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7419",
-            "reviewers": [
-              "Scott Slattery",
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "FULFILL",
-            "review_score": 1
-          },
-          {
-            "id": 7183,
-            "title": "feat(pwa): SendOrderEmails toggle (customer/location/order)",
-            "repo": "worksuite-pwa",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-05-08T19:41:07.051201+00:00",
-            "closed": "2026-05-12T14:38:31.236956+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/email-confirmation-toggle",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7183",
-            "reviewers": [
-              "Scott Slattery",
-              "Chris Christensen",
-              "Gabriela Gonzales"
-            ],
-            "is_release": false,
-            "work_stream": "PWA",
-            "type": "feat",
-            "product": "FULFILL",
-            "review_score": 1
-          },
-          {
-            "id": 7137,
-            "title": "feat(customer): SendOrderEmails ride-along on bundled location mutations",
-            "repo": "wsapi",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-05-07T20:10:51.360050+00:00",
-            "closed": "2026-05-07T20:32:35.628702+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/email-confirmation-ride-along",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7137",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "CUSTOMER",
-            "type": "feat",
-            "product": "FULFILL",
-            "review_score": 1
-          },
-          {
-            "id": 7016,
-            "title": "feat: email confirmation toggle (customer/location/order) \u2014 wsapi side",
-            "repo": "wsapi",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-05-05T21:12:39.175596+00:00",
-            "closed": "2026-05-07T15:35:17.977571+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/email-confirmation-toggle",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7016",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "FULFILL",
-            "review_score": 1
-          },
-          {
-            "id": 7015,
-            "title": "feat: gate confirmation emails on effectiveSendOrderEmails \u2014 wsapi-services side",
-            "repo": "wsapi-services",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-05-05T21:10:18.493754+00:00",
-            "closed": "2026-05-07T00:01:56.773913+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/email-confirmation-toggle",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7015",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "FULFILL",
-            "review_score": 1
-          }
-        ],
-        "INVENTORY": [
-          {
-            "id": 7515,
-            "title": "feat(retail): track Quick Scan UOM per-mode (Credit defaults to Units)",
-            "repo": "inventory-pwa",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-05-14T19:38:30.741794+00:00",
-            "closed": "2026-05-18T14:03:46.321919+00:00",
-            "merge_status": "succeeded",
-            "source": "feat/quickscan-per-mode-uom-default",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/inventory-pwa/pullrequest/7515",
-            "reviewers": [
-              "Scott Slattery",
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "RETAIL",
-            "type": "feat",
-            "product": "INVENTORY",
-            "review_score": 1
-          }
-        ],
-        "PLATFORM": [
-          {
-            "id": 6440,
-            "title": "fix: declare VITE_PDF_GENERATOR_API_URL ARG in Dockerfile",
-            "repo": "worksuite-pwa",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-04-24T16:00:53.423157+00:00",
-            "closed": "2026-04-30T13:57:01.728925+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/pdf-generator-api-url-arg",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6440",
-            "reviewers": [
-              "Scott Slattery",
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "fix",
-            "product": "PLATFORM",
-            "review_score": 1
-          },
-          {
-            "id": 7179,
-            "title": "fix(email-workers): dedup CCs against TO + gate Success on SendGrid IsSuccessStatusCode",
-            "repo": "wsapi-services",
-            "author": "Gustavo Cota",
-            "author_email": "gustavo.cota@silverfern.com",
-            "created": "2026-05-08T18:30:07.585574+00:00",
-            "closed": "2026-05-08T19:47:05.446622+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/email-worker-status-and-cc-dedup",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7179",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "EMAIL-WORKERS",
-            "type": "fix",
-            "product": "PLATFORM",
-            "review_score": 1
-          }
-        ]
-      },
-      "review_picks": [
-        7679,
-        7167,
-        7576,
+        7434,
+        7726,
         7728,
-        7673
-      ]
+        7576,
+        7653
+      ],
+      "former": false
     },
     {
       "name": "Isaac Short",
@@ -8378,12 +8063,14 @@
         ]
       },
       "review_picks": [
+        7670,
+        7673,
         7580,
         7167,
         7679,
-        7576,
-        7700
-      ]
+        7663
+      ],
+      "former": false
     },
     {
       "name": "Jared Leverington",
@@ -8445,11 +8132,13 @@
       },
       "review_picks": [
         7571,
-        7664,
-        7672,
-        7660,
-        7661
-      ]
+        7576,
+        7728,
+        7673,
+        7580,
+        7117
+      ],
+      "former": false
     },
     {
       "name": "John Beauford",
@@ -8482,12 +8171,14 @@
         ]
       },
       "review_picks": [
-        7272,
-        7227,
-        6896,
-        7292,
-        6802
-      ]
+        7728,
+        7679,
+        7167,
+        7571,
+        7576,
+        7518
+      ],
+      "former": false
     },
     {
       "name": "Kennedy Kirk",
@@ -10177,11 +9868,12 @@
       },
       "review_picks": [
         7735,
+        7292,
+        6802,
         7384,
-        6806,
-        6939,
-        7534
-      ]
+        6806
+      ],
+      "former": false
     },
     {
       "name": "Kevin Short",
@@ -14017,12 +13709,13 @@
         ]
       },
       "review_picks": [
+        6939,
         6854,
         6806,
-        6939,
         7292,
         6802
-      ]
+      ],
+      "former": false
     },
     {
       "name": "Nathan van Wingerden",
@@ -14374,139 +14067,13 @@
         ]
       },
       "review_picks": [
+        7534,
         7533,
         7414,
         7562,
-        7410,
-        6574
-      ]
-    },
-    {
-      "name": "Robert Williams",
-      "email": "robw@silverfern.com",
-      "pr_count": 5,
-      "products": {
-        "PLATFORM": [
-          {
-            "id": 6690,
-            "title": "feat(mergedev): wire Contact, Item, and Order export handlers",
-            "repo": "worksuite-synchronization",
-            "author": "Robert Williams",
-            "author_email": "robw@silverfern.com",
-            "created": "2026-04-29T02:47:13.034449+00:00",
-            "closed": "2026-04-29T20:22:25.458996+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/mergedev-export-handlers",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-synchronization/pullrequest/6690",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MERGEDEV",
-            "type": "feat",
-            "product": "PLATFORM",
-            "review_score": 1
-          },
-          {
-            "id": 6864,
-            "title": "fix(growpoint): three import-resilience fixes for WND tenant",
-            "repo": "worksuite-synchronization",
-            "author": "Robert Williams",
-            "author_email": "robw@silverfern.com",
-            "created": "2026-05-01T23:46:19.713194+00:00",
-            "closed": "2026-05-03T19:00:51.632282+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/growpoint-wnd-import-resilience",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-synchronization/pullrequest/6864",
-            "reviewers": [
-              "Dwight Bot",
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "GROWPOINT",
-            "type": "fix",
-            "product": "PLATFORM",
-            "review_score": 1
-          },
-          {
-            "id": 6849,
-            "title": "fix(growpoint): unblock order import \u2014 clamp ORDERED<1 and halt on no-progress",
-            "repo": "worksuite-synchronization",
-            "author": "Robert Williams",
-            "author_email": "robw@silverfern.com",
-            "created": "2026-05-01T17:10:13.949365+00:00",
-            "closed": "2026-05-01T21:15:18.566201+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/growpoint-order-quantity-clamp-and-no-progress-guard",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-synchronization/pullrequest/6849",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "GROWPOINT",
-            "type": "fix",
-            "product": "PLATFORM",
-            "review_score": 1
-          },
-          {
-            "id": 6762,
-            "title": "fix(growpoint): widen idcode allow-list + paginate orders by header",
-            "repo": "worksuite-synchronization",
-            "author": "Robert Williams",
-            "author_email": "robw@silverfern.com",
-            "created": "2026-04-30T16:31:05.719702+00:00",
-            "closed": "2026-04-30T23:02:32.362808+00:00",
-            "merge_status": "succeeded",
-            "source": "fix/growpoint-idcode-sanitize-charset",
-            "target": "main",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-synchronization/pullrequest/6762",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "GROWPOINT",
-            "type": "fix",
-            "product": "PLATFORM",
-            "review_score": 1
-          },
-          {
-            "id": 6728,
-            "title": "feat: wsapiImportTenants cross-tenant query + expand SKU allowed character set",
-            "repo": "wsapi",
-            "author": "Robert Williams",
-            "author_email": "robw@silverfern.com",
-            "created": "2026-04-29T22:16:57.128176+00:00",
-            "closed": "2026-04-30T18:05:00.011065+00:00",
-            "merge_status": "succeeded",
-            "source": "feature/wsapi-import-tenants-query",
-            "target": "master",
-            "status": "merged",
-            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6728",
-            "reviewers": [
-              "Chris Christensen"
-            ],
-            "is_release": false,
-            "work_stream": "MISC",
-            "type": "feat",
-            "product": "PLATFORM",
-            "review_score": 1
-          }
-        ]
-      },
-      "review_picks": [
-        7721,
-        7650,
-        7649,
-        7653,
-        7663
-      ]
+        7410
+      ],
+      "former": false
     },
     {
       "name": "Scott Slattery",
@@ -14844,7 +14411,8 @@
         7744,
         7645,
         7600
-      ]
+      ],
+      "former": false
     },
     {
       "name": "Stephen van Wingerden",
@@ -14902,12 +14470,13 @@
         ]
       },
       "review_picks": [
-        7215,
-        7117,
-        7518,
-        7239,
-        6671
-      ]
+        7700,
+        7664,
+        7672,
+        7660,
+        7661
+      ],
+      "former": false
     },
     {
       "name": "Timothy Short",
@@ -16210,9 +15779,527 @@
         7272,
         7227,
         6896,
-        7494,
-        7547
-      ]
+        7721,
+        7650
+      ],
+      "former": false
+    },
+    {
+      "name": "Eric Whitlow",
+      "email": "eric@silverfern.com",
+      "pr_count": 6,
+      "products": {
+        "FORECAST/DBR": [
+          {
+            "id": 6960,
+            "title": "Fix DBR session order item duplication from ErpItemPricing join",
+            "repo": "wsapi",
+            "author": "Eric Whitlow",
+            "author_email": "eric@silverfern.com",
+            "created": "2026-05-04T19:22:37.938383+00:00",
+            "closed": "2026-05-04T20:00:54.373085+00:00",
+            "merge_status": "succeeded",
+            "source": "fix-dbr-erp-pricing-join-duplication",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6960",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "fix",
+            "product": "FORECAST/DBR",
+            "review_score": 0
+          },
+          {
+            "id": 6989,
+            "title": "feat(dbr-calc): convert CalcSteps Context strings to display unit",
+            "repo": "wsapi",
+            "author": "Eric Whitlow",
+            "author_email": "eric@silverfern.com",
+            "created": "2026-05-05T15:36:41.143351+00:00",
+            "closed": "2026-05-05T19:06:30.535175+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/calcsteps-display-unit-conversion",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6989",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "DBR-CALC",
+            "type": "feat",
+            "product": "FORECAST/DBR",
+            "review_score": 1
+          }
+        ],
+        "PRODUCE": [
+          {
+            "id": 6984,
+            "title": "feat(allocation): convert ERP availability to display unit",
+            "repo": "wsapi",
+            "author": "Eric Whitlow",
+            "author_email": "eric@silverfern.com",
+            "created": "2026-05-05T14:25:52.836781+00:00",
+            "closed": "2026-05-05T18:48:15.034794+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/allocate-erp-unit-conversion",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6984",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "ALLOCATION",
+            "type": "feat",
+            "product": "PRODUCE",
+            "review_score": 1
+          }
+        ],
+        "RESTOCK": [
+          {
+            "id": 6781,
+            "title": "feat(restock): tenant-aware display-unit labels (Eaches/Trays)",
+            "repo": "worksuite-pwa",
+            "author": "Eric Whitlow",
+            "author_email": "eric@silverfern.com",
+            "created": "2026-04-30T18:32:23.067670+00:00",
+            "closed": "2026-05-01T15:01:20.770025+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/restock-tenant-unit-config",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6781",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "RESTOCK",
+            "type": "feat",
+            "product": "RESTOCK",
+            "review_score": 1
+          },
+          {
+            "id": 6938,
+            "title": "fix(restock): suppress display-unit label while tenant query loads",
+            "repo": "worksuite-pwa",
+            "author": "Eric Whitlow",
+            "author_email": "eric@silverfern.com",
+            "created": "2026-05-04T13:51:39.104006+00:00",
+            "closed": "2026-05-04T15:32:26.455833+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/restock-display-unit-loading-flicker",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6938",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "RESTOCK",
+            "type": "fix",
+            "product": "RESTOCK",
+            "review_score": 1
+          },
+          {
+            "id": 6779,
+            "title": "feat(restock): per-tenant unit configuration",
+            "repo": "wsapi",
+            "author": "Eric Whitlow",
+            "author_email": "eric@silverfern.com",
+            "created": "2026-04-30T18:20:13.552552+00:00",
+            "closed": "2026-05-01T14:58:33.201400+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/restock-tenant-unit-config",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6779",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "RESTOCK",
+            "type": "feat",
+            "product": "RESTOCK",
+            "review_score": 1
+          }
+        ]
+      },
+      "review_picks": [],
+      "former": true
+    },
+    {
+      "name": "Gustavo Cota",
+      "email": "gustavo.cota@silverfern.com",
+      "pr_count": 10,
+      "products": {
+        "AVAILABILITY": [
+          {
+            "id": 6408,
+            "title": "feat(availability): rebuild on perpetual inventory backend with offline queue + retry UI",
+            "repo": "worksuite-pwa",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-04-23T20:45:27.262790+00:00",
+            "closed": "2026-05-04T13:44:31.169331+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/availability-perpetual-inventory",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6408",
+            "reviewers": [
+              "Scott Slattery",
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "AVAILABILITY",
+            "type": "feat",
+            "product": "AVAILABILITY",
+            "review_score": 3
+          },
+          {
+            "id": 6940,
+            "title": "fix(availability): hide depleted rows + harden persist rehydrate",
+            "repo": "worksuite-pwa",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-05-04T14:33:47.280496+00:00",
+            "closed": "2026-05-04T16:14:29.116202+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/availability-hide-zero-qty-items",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6940",
+            "reviewers": [
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "AVAILABILITY",
+            "type": "fix",
+            "product": "AVAILABILITY",
+            "review_score": 1
+          }
+        ],
+        "FULFILL": [
+          {
+            "id": 7419,
+            "title": "feat(fulfill/inventory): orders tab on inventory side panel",
+            "repo": "worksuite-pwa",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-05-13T21:14:00.129616+00:00",
+            "closed": "2026-05-14T13:34:26.347388+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/helm-09796612-inventory-allocated-orders-tab",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7419",
+            "reviewers": [
+              "Scott Slattery",
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "FULFILL",
+            "review_score": 1
+          },
+          {
+            "id": 7183,
+            "title": "feat(pwa): SendOrderEmails toggle (customer/location/order)",
+            "repo": "worksuite-pwa",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-05-08T19:41:07.051201+00:00",
+            "closed": "2026-05-12T14:38:31.236956+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/email-confirmation-toggle",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/7183",
+            "reviewers": [
+              "Scott Slattery",
+              "Chris Christensen",
+              "Gabriela Gonzales"
+            ],
+            "is_release": false,
+            "work_stream": "PWA",
+            "type": "feat",
+            "product": "FULFILL",
+            "review_score": 1
+          },
+          {
+            "id": 7137,
+            "title": "feat(customer): SendOrderEmails ride-along on bundled location mutations",
+            "repo": "wsapi",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-05-07T20:10:51.360050+00:00",
+            "closed": "2026-05-07T20:32:35.628702+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/email-confirmation-ride-along",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7137",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "CUSTOMER",
+            "type": "feat",
+            "product": "FULFILL",
+            "review_score": 1
+          },
+          {
+            "id": 7016,
+            "title": "feat: email confirmation toggle (customer/location/order) \u2014 wsapi side",
+            "repo": "wsapi",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-05-05T21:12:39.175596+00:00",
+            "closed": "2026-05-07T15:35:17.977571+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/email-confirmation-toggle",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/7016",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "FULFILL",
+            "review_score": 1
+          },
+          {
+            "id": 7015,
+            "title": "feat: gate confirmation emails on effectiveSendOrderEmails \u2014 wsapi-services side",
+            "repo": "wsapi-services",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-05-05T21:10:18.493754+00:00",
+            "closed": "2026-05-07T00:01:56.773913+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/email-confirmation-toggle",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7015",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "FULFILL",
+            "review_score": 1
+          }
+        ],
+        "INVENTORY": [
+          {
+            "id": 7515,
+            "title": "feat(retail): track Quick Scan UOM per-mode (Credit defaults to Units)",
+            "repo": "inventory-pwa",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-05-14T19:38:30.741794+00:00",
+            "closed": "2026-05-18T14:03:46.321919+00:00",
+            "merge_status": "succeeded",
+            "source": "feat/quickscan-per-mode-uom-default",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/inventory-pwa/pullrequest/7515",
+            "reviewers": [
+              "Scott Slattery",
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "RETAIL",
+            "type": "feat",
+            "product": "INVENTORY",
+            "review_score": 1
+          }
+        ],
+        "PLATFORM": [
+          {
+            "id": 6440,
+            "title": "fix: declare VITE_PDF_GENERATOR_API_URL ARG in Dockerfile",
+            "repo": "worksuite-pwa",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-04-24T16:00:53.423157+00:00",
+            "closed": "2026-04-30T13:57:01.728925+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/pdf-generator-api-url-arg",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-pwa/pullrequest/6440",
+            "reviewers": [
+              "Scott Slattery",
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "fix",
+            "product": "PLATFORM",
+            "review_score": 1
+          },
+          {
+            "id": 7179,
+            "title": "fix(email-workers): dedup CCs against TO + gate Success on SendGrid IsSuccessStatusCode",
+            "repo": "wsapi-services",
+            "author": "Gustavo Cota",
+            "author_email": "gustavo.cota@silverfern.com",
+            "created": "2026-05-08T18:30:07.585574+00:00",
+            "closed": "2026-05-08T19:47:05.446622+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/email-worker-status-and-cc-dedup",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi-services/pullrequest/7179",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "EMAIL-WORKERS",
+            "type": "fix",
+            "product": "PLATFORM",
+            "review_score": 1
+          }
+        ]
+      },
+      "review_picks": [],
+      "former": true
+    },
+    {
+      "name": "Robert Williams",
+      "email": "robw@silverfern.com",
+      "pr_count": 5,
+      "products": {
+        "PLATFORM": [
+          {
+            "id": 6690,
+            "title": "feat(mergedev): wire Contact, Item, and Order export handlers",
+            "repo": "worksuite-synchronization",
+            "author": "Robert Williams",
+            "author_email": "robw@silverfern.com",
+            "created": "2026-04-29T02:47:13.034449+00:00",
+            "closed": "2026-04-29T20:22:25.458996+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/mergedev-export-handlers",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-synchronization/pullrequest/6690",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MERGEDEV",
+            "type": "feat",
+            "product": "PLATFORM",
+            "review_score": 1
+          },
+          {
+            "id": 6864,
+            "title": "fix(growpoint): three import-resilience fixes for WND tenant",
+            "repo": "worksuite-synchronization",
+            "author": "Robert Williams",
+            "author_email": "robw@silverfern.com",
+            "created": "2026-05-01T23:46:19.713194+00:00",
+            "closed": "2026-05-03T19:00:51.632282+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/growpoint-wnd-import-resilience",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-synchronization/pullrequest/6864",
+            "reviewers": [
+              "Dwight Bot",
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "GROWPOINT",
+            "type": "fix",
+            "product": "PLATFORM",
+            "review_score": 1
+          },
+          {
+            "id": 6849,
+            "title": "fix(growpoint): unblock order import \u2014 clamp ORDERED<1 and halt on no-progress",
+            "repo": "worksuite-synchronization",
+            "author": "Robert Williams",
+            "author_email": "robw@silverfern.com",
+            "created": "2026-05-01T17:10:13.949365+00:00",
+            "closed": "2026-05-01T21:15:18.566201+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/growpoint-order-quantity-clamp-and-no-progress-guard",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-synchronization/pullrequest/6849",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "GROWPOINT",
+            "type": "fix",
+            "product": "PLATFORM",
+            "review_score": 1
+          },
+          {
+            "id": 6762,
+            "title": "fix(growpoint): widen idcode allow-list + paginate orders by header",
+            "repo": "worksuite-synchronization",
+            "author": "Robert Williams",
+            "author_email": "robw@silverfern.com",
+            "created": "2026-04-30T16:31:05.719702+00:00",
+            "closed": "2026-04-30T23:02:32.362808+00:00",
+            "merge_status": "succeeded",
+            "source": "fix/growpoint-idcode-sanitize-charset",
+            "target": "main",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/worksuite-synchronization/pullrequest/6762",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "GROWPOINT",
+            "type": "fix",
+            "product": "PLATFORM",
+            "review_score": 1
+          },
+          {
+            "id": 6728,
+            "title": "feat: wsapiImportTenants cross-tenant query + expand SKU allowed character set",
+            "repo": "wsapi",
+            "author": "Robert Williams",
+            "author_email": "robw@silverfern.com",
+            "created": "2026-04-29T22:16:57.128176+00:00",
+            "closed": "2026-04-30T18:05:00.011065+00:00",
+            "merge_status": "succeeded",
+            "source": "feature/wsapi-import-tenants-query",
+            "target": "master",
+            "status": "merged",
+            "url": "https://dev.azure.com/teamsilverfern/SilverFern/_git/wsapi/pullrequest/6728",
+            "reviewers": [
+              "Chris Christensen"
+            ],
+            "is_release": false,
+            "work_stream": "MISC",
+            "type": "feat",
+            "product": "PLATFORM",
+            "review_score": 1
+          }
+        ]
+      },
+      "review_picks": [],
+      "former": true
     }
   ],
   "active_prs": [
@@ -16902,7 +16989,7 @@
       "product": "FORECAST/DBR"
     }
   ],
-  "generated_at": "2026-05-19T14:39:14.485272"
+  "generated_at": "2026-05-19T14:42:30.388203"
 }</script>
 
 <script>
@@ -16938,13 +17025,13 @@ function el(tag, attrs={}, ...children){
 
 function header(){
   const m = DATA.metrics;
-  return el('header', {class:'bg-gradient-to-r from-slate-900 to-slate-700 text-white sticky-top shadow-lg'},
+  return el('header', {class:'sticky-top shadow-lg', style:'background:linear-gradient(135deg, #3F4948 0%, #2E3635 100%); color:white;'},
     el('div', {class:'max-w-7xl mx-auto px-6 py-6'},
       el('div', {class:'flex flex-wrap items-end justify-between gap-4'},
         el('div', {},
-          el('div', {class:'text-xs uppercase tracking-widest text-slate-400'}, 'Sprint Review'),
-          el('h1', {class:'text-4xl font-bold mt-1'}, `Sprint ${m.sprint_label}`),
-          el('div', {class:'text-slate-300 mt-1'}, m.sprint_window)
+          el('div', {class:'sf-eyebrow', style:'color:#A1DBA6;'}, 'Silver Fern · Sprint Review'),
+          el('h1', {class:'sf-h1 text-4xl mt-2', style:'color:white;'}, `Sprint ${m.sprint_label}`),
+          el('div', {class:'sf-h2 text-lg mt-1', style:'color:#A1DBA6;'}, m.sprint_window)
         ),
         el('div', {class:'flex gap-6 text-right'},
           metric(m.merged, 'Merged'),
@@ -16955,7 +17042,7 @@ function header(){
           metric(m.authors_count, 'Devs'),
         )
       ),
-      el('nav', {class:'mt-5 flex flex-wrap gap-2 text-sm'},
+      el('nav', {class:'mt-6 flex flex-wrap gap-2 text-sm'},
         navlink('#overview','Overview'),
         navlink('#products','By Product'),
         navlink('#active','In Red'),
@@ -16967,21 +17054,26 @@ function header(){
 }
 function metric(n, label){
   return el('div', {},
-    el('div', {class:'text-3xl font-bold'}, String(n)),
-    el('div', {class:'text-xs uppercase text-slate-400 tracking-wider'}, label)
+    el('div', {class:'text-3xl', style:'font-weight:700; color:white; line-height:1;'}, String(n)),
+    el('div', {class:'sf-eyebrow mt-1', style:'color:rgba(161,219,166,0.85);'}, label)
   );
 }
 function navlink(href, label){
-  return el('a',{href, class:'px-3 py-1.5 rounded-md bg-white/10 hover:bg-white/20 transition'}, label);
+  return el('a',{href, class:'px-3 py-1.5 rounded transition', style:'background:rgba(161,219,166,0.15); color:white; border:1px solid rgba(161,219,166,0.25); font-weight:500;',
+    onmouseover: (e) => { e.currentTarget.style.background = 'rgba(161,219,166,0.30)'; },
+    onmouseout:  (e) => { e.currentTarget.style.background = 'rgba(161,219,166,0.15)'; },
+  }, label);
 }
 
 function overviewSection(){
-  return el('section', {id:'overview', class:'max-w-7xl mx-auto px-6 py-8'},
-    el('h2', {class:'text-2xl font-bold mb-2'}, 'Where we were → Where we are'),
-    el('p', {class:'text-slate-600 mb-6'}, `Sprint 27 closed with ${DATA.metrics.merged} merged PRs and ${DATA.metrics.active} still active. The big arcs this sprint:`),
+  return el('section', {id:'overview', class:'max-w-7xl mx-auto px-6 py-10'},
+    el('div', {class:'sf-eyebrow mb-2'}, 'The Arc'),
+    el('h2', {class:'sf-h2 text-3xl mb-3'}, 'Where we were → Where we are'),
+    el('p', {class:'mb-7 max-w-3xl', style:'color:#3F4948; font-weight:300;'},
+      `${DATA.metrics.merged} PRs merged, ${DATA.metrics.active} still in flight. The big arcs from S27:`),
     el('div', {class:'grid md:grid-cols-2 lg:grid-cols-4 gap-4'},
-      arcCard('RESTOCK', 'Orders v2 lands', 'orders-v2 became the default route, legacy /restock/orders ripped out, OrdersV2Enabled flag retired. BYOA recalc mutations + override+set bindings shipped.'),
-      arcCard('PRODUCE', 'Material movement + mobile receive', 'MTR (Material Move + Receive Transfer) UI + E2E. MPR-05 mobile PO receive UX with OrganicLotCode + Vendor Lot # paths. HGI hardgoods inventory queries.'),
+      arcCard('RESTOCK', 'Orders v2 lands', 'orders-v2 became the default route. Legacy /restock/orders ripped out, OrdersV2Enabled flag retired, BYOA recalc mutations + override+set bindings shipped.'),
+      arcCard('PRODUCE', 'Material movement + mobile receive', 'MTR (Material Move + Receive Transfer) UI + E2E. MPR-05 mobile PO receive with OrganicLotCode + Vendor Lot # paths. HGI hardgoods inventory queries.'),
       arcCard('FULFILL', 'Orders, customers, allocation', 'CustomerItem v2 (shelf price + typed errors), deleteTerms with guards, allocation panel improvements, capacity row drilldown.'),
       arcCard('PLATFORM', 'Telemetry + KurrentDB hardening', 'OTel instrumentation across 6 produce projection handlers. KurrentDB read-stream disposal enforced via BannedApiAnalyzers. Serilog ReloadableLogger leak fixed.'),
     )
@@ -16989,17 +17081,18 @@ function overviewSection(){
 }
 function arcCard(product, title, desc){
   const c = PRODUCT_COLORS[product] || '#6B7280';
-  return el('div', {class:'bg-white rounded-lg shadow-sm border border-slate-200 p-4'},
+  return el('div', {class:'sf-card sf-card-hover p-5'},
     el('div', {class:'chip mb-3', style:`background:${c}`}, product),
-    el('div', {class:'font-semibold text-slate-900'}, title),
-    el('div', {class:'text-sm text-slate-600 mt-2 leading-relaxed'}, desc)
+    el('div', {class:'sf-h3 text-base'}, title),
+    el('div', {class:'text-sm mt-2', style:'color:#3F4948; font-weight:300;'}, desc)
   );
 }
 
 function productsSection(){
   const products = Object.entries(DATA.products).sort((a,b) => b[1].count - a[1].count);
-  return el('section', {id:'products', class:'max-w-7xl mx-auto px-6 py-8'},
-    el('h2', {class:'text-2xl font-bold mb-6'}, 'By product'),
+  return el('section', {id:'products', class:'max-w-7xl mx-auto px-6 py-10'},
+    el('div', {class:'sf-eyebrow mb-2'}, 'The Slice'),
+    el('h2', {class:'sf-h2 text-3xl mb-6'}, 'By product'),
     el('div', {class:'grid md:grid-cols-2 gap-5'},
       ...products.map(([name, p]) => productCard(name, p))
     )
@@ -17007,60 +17100,64 @@ function productsSection(){
 }
 function productCard(name, p){
   const c = PRODUCT_COLORS[name] || '#6B7280';
-  return el('div', {class:'bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden'},
+  return el('div', {class:'sf-card sf-card-hover overflow-hidden'},
     el('div', {style:`background:${c}`, class:'px-5 py-3 text-white flex justify-between items-center'},
-      el('div', {class:'font-bold text-lg'}, name),
-      el('div', {class:'text-sm'},
+      el('div', {class:'sf-h3 text-lg', style:'color:white;'}, name),
+      el('div', {class:'text-sm font-medium', style:'color:rgba(255,255,255,0.92);'},
         `${p.count} PRs · ${p.merged} merged · ${p.active} in red`)
     ),
     el('div', {class:'p-5'},
-      el('div', {class:'text-xs uppercase tracking-wider text-slate-500 mb-2'}, 'Top contributors'),
-      el('div', {class:'flex flex-wrap gap-2 mb-4'},
-        ...p.contributors.map(([n,c]) =>
-          el('span', {class:'px-2 py-1 bg-slate-100 rounded text-sm'}, `${n} · ${c}`)
+      el('div', {class:'sf-eyebrow mb-2'}, 'Top contributors'),
+      el('div', {class:'flex flex-wrap gap-2 mb-5'},
+        ...p.contributors.map(([n,cnt]) =>
+          el('span', {class:'px-2.5 py-1 rounded text-sm', style:'background:#F2F2F2; color:#3F4948; font-weight:500;'},
+            `${n} · ${cnt}`)
         )
       ),
       p.streams.length ? el('div', {},
-        el('div', {class:'text-xs uppercase tracking-wider text-slate-500 mb-2'}, 'Work streams'),
-        el('div', {class:'flex flex-wrap gap-2 mb-4'},
-          ...p.streams.map(([s,c]) =>
-            el('span', {class:'px-2 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-mono'}, `${s} (${c})`)
+        el('div', {class:'sf-eyebrow mb-2'}, 'Work streams'),
+        el('div', {class:'flex flex-wrap gap-2 mb-5'},
+          ...p.streams.map(([s,cnt]) =>
+            el('span', {class:'px-2 py-1 rounded text-xs font-mono', style:'background:white; border:1px solid #B3B3B3; color:#3F4948;'},
+              `${s} (${cnt})`)
           )
         )
       ) : null,
-      el('div', {class:'text-xs uppercase tracking-wider text-slate-500 mb-2'}, 'Sample titles'),
-      el('ul', {class:'space-y-1 text-sm text-slate-700'},
-        ...p.sample_titles.map(t => el('li', {class:'truncate'}, `• ${t}`))
+      el('div', {class:'sf-eyebrow mb-2'}, 'Sample titles'),
+      el('ul', {class:'space-y-1 text-sm', style:'color:#3F4948; font-weight:300;'},
+        ...p.sample_titles.map(t => el('li', {class:'truncate'}, `· ${t}`))
       )
     )
   );
 }
 
 function activeSection(){
-  return el('section', {id:'active', class:'max-w-7xl mx-auto px-6 py-8'},
-    el('h2', {class:'text-2xl font-bold mb-2'}, `In Red — Active PRs (${DATA.active_prs.length})`),
-    el('p', {class:'text-slate-600 mb-4'}, 'Open PRs at end of sprint — still being tested, reviewed, or in flight. These carry into Sprint 28 planning.'),
-    el('div', {class:'bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden'},
+  return el('section', {id:'active', class:'max-w-7xl mx-auto px-6 py-10'},
+    el('div', {class:'sf-eyebrow mb-2'}, 'In Flight'),
+    el('h2', {class:'sf-h2 text-3xl mb-2'}, `In Red — ${DATA.active_prs.length} active PRs`),
+    el('p', {class:'mb-5 max-w-3xl', style:'color:#3F4948; font-weight:300;'},
+      'Open PRs at end of sprint — still being tested, reviewed, or in flight. These carry into Sprint 28 planning.'),
+    el('div', {class:'sf-card overflow-hidden'},
       el('table', {class:'w-full text-sm'},
-        el('thead', {class:'bg-slate-50 text-slate-600 uppercase text-xs tracking-wider'},
+        el('thead', {style:'background:#F2F2F2;'},
           el('tr', {},
-            el('th', {class:'text-left px-4 py-2'}, 'Author'),
-            el('th', {class:'text-left px-4 py-2'}, 'Repo'),
-            el('th', {class:'text-left px-4 py-2'}, 'Title'),
-            el('th', {class:'text-left px-4 py-2'}, 'Product'),
-            el('th', {class:'text-right px-4 py-2'}, '')
+            el('th', {class:'text-left px-4 py-3 sf-eyebrow'}, 'Author'),
+            el('th', {class:'text-left px-4 py-3 sf-eyebrow'}, 'Repo'),
+            el('th', {class:'text-left px-4 py-3 sf-eyebrow'}, 'Title'),
+            el('th', {class:'text-left px-4 py-3 sf-eyebrow'}, 'Product'),
+            el('th', {class:'text-right px-4 py-3'}, '')
           )
         ),
-        el('tbody', {class:'divide-y divide-slate-100'},
-          ...DATA.active_prs.map(pr => el('tr', {class:'pr-row'},
-            el('td', {class:'px-4 py-2'}, pr.author),
-            el('td', {class:'px-4 py-2 font-mono text-xs text-slate-600'}, pr.repo),
-            el('td', {class:'px-4 py-2'}, pr.title),
-            el('td', {class:'px-4 py-2'},
+        el('tbody', {style:'border-top:1px solid #E5E7E5;'},
+          ...DATA.active_prs.map(pr => el('tr', {class:'pr-row', style:'border-bottom:1px solid #F2F2F2;'},
+            el('td', {class:'px-4 py-2.5', style:'color:#3F4948; font-weight:500;'}, pr.author),
+            el('td', {class:'px-4 py-2.5 font-mono text-xs', style:'color:#69936C;'}, pr.repo),
+            el('td', {class:'px-4 py-2.5', style:'color:#3F4948;'}, pr.title),
+            el('td', {class:'px-4 py-2.5'},
               el('span', {class:'chip', style:`background:${PRODUCT_COLORS[pr.product]||'#6B7280'}`}, pr.product)
             ),
-            el('td', {class:'px-4 py-2 text-right'},
-              el('a',{href:pr.url, target:'_blank', class:'text-blue-600 hover:underline text-xs'}, `#${pr.id} ↗`)
+            el('td', {class:'px-4 py-2.5 text-right'},
+              el('a',{href:pr.url, target:'_blank', class:'text-xs font-mono hover:underline', style:'color:#69936C;'}, `#${pr.id} ↗`)
             )
           ))
         )
@@ -17072,37 +17169,38 @@ function activeSection(){
 function metricsSection(){
   const authorBars = DATA.authors.slice().sort((a,b) => b.pr_count - a.pr_count);
   const max = Math.max(...authorBars.map(a => a.pr_count));
-  return el('section', {id:'metrics', class:'max-w-7xl mx-auto px-6 py-8'},
-    el('h2', {class:'text-2xl font-bold mb-6'}, 'Sprint metrics'),
+  return el('section', {id:'metrics', class:'max-w-7xl mx-auto px-6 py-10'},
+    el('div', {class:'sf-eyebrow mb-2'}, 'The Numbers'),
+    el('h2', {class:'sf-h2 text-3xl mb-6'}, 'Sprint metrics'),
     el('div', {class:'grid md:grid-cols-2 gap-6'},
-      el('div', {class:'bg-white rounded-lg shadow-sm border border-slate-200 p-5'},
-        el('h3', {class:'font-semibold mb-3'}, 'PRs by author (feat/fix/misc only)'),
+      el('div', {class:'sf-card p-6'},
+        el('div', {class:'sf-h3 mb-4'}, 'PRs by author'),
         el('div', {class:'space-y-1.5'},
           ...authorBars.map(a => el('div', {class:'flex items-center gap-2 text-sm'},
-            el('div', {class:'w-44 truncate'}, a.name),
-            el('div', {class:'flex-1 bg-slate-100 rounded h-5 overflow-hidden'},
+            el('div', {class:'w-44 truncate', style:`color:${a.former ? '#B3B3B3' : '#3F4948'}; font-weight:500;`}, a.name),
+            el('div', {class:'flex-1 rounded h-5 overflow-hidden', style:'background:#F2F2F2;'},
               el('div', {
-                class:'h-full bg-blue-500',
-                style:`width:${(a.pr_count/max*100).toFixed(1)}%`
+                class:'h-full',
+                style:`width:${(a.pr_count/max*100).toFixed(1)}%; background:${a.former ? '#B3B3B3' : '#69936C'};`
               })
             ),
-            el('div', {class:'w-10 text-right font-mono text-xs'}, String(a.pr_count))
+            el('div', {class:'w-10 text-right font-mono text-xs', style:'color:#3F4948;'}, String(a.pr_count))
           ))
         )
       ),
-      el('div', {class:'bg-white rounded-lg shadow-sm border border-slate-200 p-5'},
-        el('h3', {class:'font-semibold mb-3'}, 'PRs by product'),
+      el('div', {class:'sf-card p-6'},
+        el('div', {class:'sf-h3 mb-4'}, 'PRs by product'),
         el('div', {class:'space-y-2'},
           ...Object.entries(DATA.products).sort((a,b) => b[1].count - a[1].count).map(([name, p]) =>
             el('div', {class:'flex items-center gap-2 text-sm'},
               el('div', {class:'w-32'}, el('span', {class:'chip', style:`background:${PRODUCT_COLORS[name]}`}, name)),
-              el('div', {class:'flex-1 bg-slate-100 rounded h-5 overflow-hidden'},
+              el('div', {class:'flex-1 rounded h-5 overflow-hidden', style:'background:#F2F2F2;'},
                 el('div', {
                   class:'h-full',
-                  style:`width:${(p.count/DATA.metrics.merged*100).toFixed(1)}%; background:${PRODUCT_COLORS[name]}`
+                  style:`width:${(p.count/DATA.metrics.merged*100).toFixed(1)}%; background:${PRODUCT_COLORS[name]};`
                 })
               ),
-              el('div', {class:'w-10 text-right font-mono text-xs'}, String(p.count))
+              el('div', {class:'w-10 text-right font-mono text-xs', style:'color:#3F4948;'}, String(p.count))
             )
           )
         )
@@ -17112,13 +17210,16 @@ function metricsSection(){
 }
 
 function reviewsSection(){
-  return el('section', {id:'reviews', class:'max-w-7xl mx-auto px-6 py-8'},
-    el('div', {class:'flex justify-between items-end mb-4'},
+  return el('section', {id:'reviews', class:'max-w-7xl mx-auto px-6 py-10'},
+    el('div', {class:'flex justify-between items-end mb-5'},
       el('div', {},
-        el('h2', {class:'text-2xl font-bold'}, 'By developer — alphabetical'),
-        el('p', {class:'text-slate-600 mt-1'}, 'Each card has two parts: ★ 5 PRs from teammates that this dev should review tomorrow, then their own PRs from the sprint grouped by product area.'),
+        el('div', {class:'sf-eyebrow mb-2'}, 'The Crew'),
+        el('h2', {class:'sf-h2 text-3xl'}, 'By developer'),
+        el('p', {class:'mt-2 max-w-3xl', style:'color:#3F4948; font-weight:300;'},
+          'Each card has two parts: ★ 5 PRs from teammates that this dev should review tomorrow, then their own PRs grouped by product area. Former Silver Fern devs appear at the end.'),
       ),
-      el('div', {class:'text-sm text-slate-500'}, `${DATA.authors.length} developers · ${DATA.authors.reduce((s,a) => s + (a.review_picks?.length||0), 0)} review picks`)
+      el('div', {class:'text-sm', style:'color:#69936C; font-weight:500;'},
+        `${DATA.authors.filter(a=>!a.former).length} active · ${DATA.authors.reduce((s,a) => s + (a.review_picks?.length||0), 0)} picks`)
     ),
     el('div', {class:'space-y-4'},
       ...DATA.authors.map(a => authorCard(a))
@@ -17137,29 +17238,31 @@ function findPrById(id) {
 
 function reviewPickRow(pr){
   const c = PRODUCT_COLORS[pr.product] || '#6B7280';
-  return el('div', {class:'pr-row flex items-start gap-3 px-3 py-2 rounded bg-amber-50/60 border border-amber-200/60'},
-    el('span', {class:'text-xs px-2 py-0.5 rounded font-mono shrink-0 bg-amber-200 text-amber-900'},
+  return el('div', {class:'pr-row sf-pick-row flex items-start gap-3 px-3 py-2 rounded'},
+    el('span', {class:'text-xs px-2 py-0.5 rounded font-mono shrink-0', style:'background:#A1DBA6; color:#3F4948; font-weight:700;'},
       `★ ${pr.review_score}`),
     el('span', {class:'chip text-xs shrink-0', style:`background:${c}`}, pr.product),
-    el('span', {class:'text-xs text-slate-600 shrink-0 w-32 truncate font-medium'}, `by ${pr.author}`),
-    el('a', {href:pr.url, target:'_blank', class:'text-sm text-slate-800 hover:text-blue-600 hover:underline flex-1 font-medium'},
+    el('span', {class:'text-xs shrink-0 w-32 truncate', style:'color:#3F4948; font-weight:500;'}, `by ${pr.author}`),
+    el('a', {href:pr.url, target:'_blank', class:'text-sm hover:underline flex-1', style:'color:#3F4948; font-weight:500;'},
       pr.title),
-    el('span', {class:'text-xs font-mono text-slate-400 shrink-0'}, pr.repo),
-    el('span', {class:'text-xs text-slate-400 shrink-0'}, `#${pr.id}`)
+    el('span', {class:'text-xs font-mono shrink-0', style:'color:#69936C;'}, pr.repo),
+    el('span', {class:'text-xs font-mono shrink-0', style:'color:#B3B3B3;'}, `#${pr.id}`)
   );
 }
 
 function authorCard(a){
   const productEntries = Object.entries(a.products).sort((x,y) => y[1].length - x[1].length);
   const picks = (a.review_picks || []).map(findPrById).filter(Boolean);
-  return el('div', {class:'bg-white rounded-lg shadow-sm border border-slate-200'},
-    el('div', {class:'px-5 py-4 border-b border-slate-100 flex flex-wrap items-center gap-4 justify-between'},
+  const cardStyle = a.former ? 'opacity:0.75;' : '';
+  return el('div', {class:'sf-card', style:cardStyle},
+    el('div', {class:'px-5 py-4 flex flex-wrap items-center gap-4 justify-between', style:'border-bottom:1px solid #F2F2F2;'},
       el('div', {},
-        el('div', {class:'flex items-center gap-3'},
-          el('h3', {class:'text-xl font-bold'}, a.name),
-          el('span', {class:'text-sm text-slate-500'}, `${a.pr_count} PRs`)
+        el('div', {class:'flex items-center gap-3 flex-wrap'},
+          el('h3', {class:'sf-h3 text-xl'}, a.name),
+          el('span', {class:'text-sm', style:'color:#B3B3B3;'}, `${a.pr_count} PRs`),
+          a.former ? el('span', {class:'former-tag'}, 'Former') : null
         ),
-        el('div', {class:'text-xs text-slate-400 mt-1'}, a.email || '')
+        el('div', {class:'text-xs mt-1', style:'color:#B3B3B3;'}, a.email || '')
       ),
       el('div', {class:'flex flex-wrap gap-1.5'},
         ...productEntries.map(([prod, prs]) =>
@@ -17169,16 +17272,19 @@ function authorCard(a){
       )
     ),
     picks.length
-      ? el('div', {class:'px-5 pt-4 pb-2 border-b border-amber-100 bg-amber-50/30'},
-          el('div', {class:'flex items-center gap-2 mb-2'},
-            el('span', {class:'text-xs uppercase tracking-wider font-bold text-amber-800'}, `★ Your review picks (${picks.length})`),
-            el('span', {class:'text-xs text-slate-500'}, `— PRs ${a.name.split(' ')[0]} should review tomorrow`)
+      ? el('div', {class:'px-5 pt-4 pb-3', style:'background:rgba(161,219,166,0.10); border-bottom:1px solid rgba(105,147,108,0.20);'},
+          el('div', {class:'flex items-center gap-2 mb-3'},
+            el('span', {class:'sf-eyebrow', style:'color:#557A58; font-size:11px;'},
+              `★ ${a.name.split(' ')[0]}'s review picks (${picks.length})`),
+            el('span', {class:'text-xs', style:'color:#3F4948; font-style:italic; font-family:"PT Serif", serif;'},
+              `— PRs to review tomorrow`)
           ),
           el('div', {class:'space-y-1.5'}, ...picks.map(reviewPickRow))
         )
-      : null,
+      : (a.former ? el('div', {class:'px-5 py-3 text-xs italic', style:'background:#F2F2F2; color:#B3B3B3; font-family:"PT Serif", serif;'},
+          'No longer at Silver Fern — listed for context, no review assignments.') : null),
     el('div', {class:'p-5'},
-      el('div', {class:'text-xs uppercase tracking-wider text-slate-500 mb-2 font-semibold'}, `${a.name.split(' ')[0]}'s own PRs this sprint`),
+      el('div', {class:'sf-eyebrow mb-3'}, `${a.name.split(' ')[0]}'s own PRs this sprint`),
       ...productEntries.map(([prod, prs]) => productSection(prod, prs))
     )
   );
@@ -17187,10 +17293,13 @@ function authorCard(a){
 function productSection(prod, prs){
   const c = PRODUCT_COLORS[prod] || '#6B7280';
   return el('details', {class:'mb-3'},
-    el('summary', {class:'flex items-center gap-2 py-2 hover:bg-slate-50 px-2 rounded'},
-      el('span', {class:'chev text-slate-400'}, '▸'),
+    el('summary', {class:'flex items-center gap-2 py-2 px-2 rounded', style:'transition:background 0.15s;',
+      onmouseover: (e) => e.currentTarget.style.background = '#F2F2F2',
+      onmouseout:  (e) => e.currentTarget.style.background = 'transparent'},
+      el('span', {class:'chev', style:'color:#B3B3B3;'}, '▸'),
       el('span', {class:'chip', style:`background:${c}`}, prod),
-      el('span', {class:'text-sm text-slate-600 font-medium'}, `${prs.length} PR${prs.length===1?'':'s'}`)
+      el('span', {class:'text-sm', style:'color:#3F4948; font-weight:500;'},
+        `${prs.length} PR${prs.length===1?'':'s'}`)
     ),
     el('div', {class:'pl-6 mt-2 space-y-1'},
       ...prs.map(pr => prRow(pr))
@@ -17199,21 +17308,37 @@ function productSection(prod, prs){
 }
 
 function prRow(pr){
+  const typeStyles = {
+    feat: {bg:'#A1DBA6', col:'#2E3635'},
+    fix:  {bg:'#F2F2F2', col:'#3F4948'},
+    misc: {bg:'#F2F2F2', col:'#B3B3B3'},
+  };
+  const ts = typeStyles[pr.type] || typeStyles.misc;
   return el('div', {class:'pr-row flex items-start gap-3 px-2 py-1.5 rounded'},
-    el('span', {class:`text-xs px-1.5 py-0.5 rounded font-mono shrink-0 ${TYPE_BADGES[pr.type] || 'bg-slate-100'}`}, pr.type),
-    el('span', {class:'text-xs font-mono text-slate-500 shrink-0 w-32 truncate'}, pr.repo),
-    el('a', {href:pr.url, target:'_blank', class:'text-sm text-slate-800 hover:text-blue-600 hover:underline flex-1'},
+    el('span', {class:'text-xs px-1.5 py-0.5 rounded font-mono shrink-0',
+                style:`background:${ts.bg}; color:${ts.col}; font-weight:600;`}, pr.type),
+    el('span', {class:'text-xs font-mono shrink-0 w-32 truncate', style:'color:#69936C;'}, pr.repo),
+    el('a', {href:pr.url, target:'_blank', class:'text-sm hover:underline flex-1', style:'color:#3F4948;'},
       pr.title),
     pr.status === 'active'
-      ? el('span', {class:'text-xs bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded shrink-0'}, 'IN RED')
+      ? el('span', {class:'text-xs px-1.5 py-0.5 rounded shrink-0',
+                    style:'background:#3F4948; color:white; font-weight:600; letter-spacing:0.05em;'}, 'IN RED')
       : null,
-    el('span', {class:'text-xs text-slate-400 shrink-0'}, `#${pr.id}`)
+    el('span', {class:'text-xs font-mono shrink-0', style:'color:#B3B3B3;'}, `#${pr.id}`)
   );
 }
 
 function footer(){
-  return el('footer', {class:'max-w-7xl mx-auto px-6 py-8 text-center text-xs text-slate-400'},
-    `Generated ${new Date(DATA.generated_at).toLocaleString()} · Silver Fern Sprint Review`
+  return el('footer', {class:'mt-12', style:'background:#3F4948; color:white;'},
+    el('div', {class:'max-w-7xl mx-auto px-6 py-6 flex flex-wrap justify-between items-center gap-4'},
+      el('div', {},
+        el('div', {class:'sf-eyebrow', style:'color:#A1DBA6;'}, 'Silver Fern'),
+        el('div', {class:'text-sm mt-1', style:'color:rgba(255,255,255,0.85);'},
+          `Sprint Review · Generated ${new Date(DATA.generated_at).toLocaleString()}`)
+      ),
+      el('div', {class:'text-xs italic', style:'color:#A1DBA6; font-family:"PT Serif", serif;'},
+        'Authentic · Innovative · Expert')
+    )
   );
 }
 
